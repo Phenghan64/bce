@@ -1,0 +1,30 @@
+{
+  "retrieved": "2026-11-07",
+  "purpose": "Real-input and positive/negative homology plumbing checks; not a blind enzyme-activity benchmark",
+  "records": [
+    {
+      "accession": "P00780",
+      "url": "https://rest.uniprot.org/uniprotkb/P00780.fasta",
+      "sha256": "58d60f09bdbb8bc2e3939824f46f021c7e95de523bec6226d4fa24d612afbfa2",
+      "header": ">sp|P00780|SUBC_BACLI Subtilisin Carlsberg OS=Bacillus licheniformis OX=1402 GN=subC PE=1 SV=2"
+    },
+    {
+      "accession": "P00782",
+      "url": "https://rest.uniprot.org/uniprotkb/P00782.fasta",
+      "sha256": "bf81e0f8fea6f80e948c18c78124094bf44051fe0a24ac74d4b66188007d6f1e",
+      "header": ">sp|P00782|SUBT_BACAM Subtilisin BPN' OS=Bacillus amyloliquefaciens OX=1390 GN=apr PE=1 SV=1"
+    },
+    {
+      "accession": "P0A7V0",
+      "url": "https://rest.uniprot.org/uniprotkb/P0A7V0.fasta",
+      "sha256": "cf9e7e4837271fa9bdb6044708db3a52f9b22799909d2afc91f85dc3f980def4",
+      "header": ">sp|P0A7V0|RS2_ECOLI Small ribosomal subunit protein uS2 OS=Escherichia coli (strain K12) OX=83333 GN=rpsB PE=1 SV=2"
+    },
+    {
+      "accession": "P69905",
+      "url": "https://rest.uniprot.org/uniprotkb/P69905.fasta",
+      "sha256": "aecc3cb75f840f242f6b4489d501384d0c50cf0d61a8dab5a1dab81a80aa4bae",
+      "header": ">sp|P69905|HBA_HUMAN Hemoglobin subunit alpha OS=Homo sapiens OX=9606 GN=HBA1 PE=1 SV=2"
+    }
+  ]
+}

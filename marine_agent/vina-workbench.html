@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AutoDock Vina 标准工作区</title>
+  <link rel="stylesheet" href="vina-workbench.css?v=20261029-pose-v2" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">V</span><div><strong>AutoDock Vina</strong><small>标准分子对接工作区</small></div></div>
+    <div class="top-actions"><span class="engine-badge">官方 Vina 流程</span><a href="/marine-agent/">返回 Agent</a></div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="eyebrow">WORKFLOW</div>
+      <nav id="steps">
+        <button class="step active" data-step="1"><span>1</span><div><b>受体</b><small>PDBQT 文件</small></div></button>
+        <button class="step" data-step="2"><span>2</span><div><b>配体</b><small>逐个添加</small></div></button>
+        <button class="step" data-step="3"><span>3</span><div><b>搜索盒</b><small>中心与尺寸</small></div></button>
+        <button class="step" data-step="4"><span>4</span><div><b>Vina 参数</b><small>可复现设置</small></div></button>
+        <button class="step" data-step="5"><span>5</span><div><b>运行与结果</b><small>姿态和排序</small></div></button>
+      </nav>
+      <div class="side-note"><b>输入边界</b><p>当前标准档要求受体和配体已经准备为 PDBQT。系统不会擅自猜测质子化、互变异构体或手性。</p></div>
+    </aside>
+    <main class="main">
+      <div class="intro"><div><div class="eyebrow">AUTODOCK VINA · EXPLICIT PROTOCOL</div><h1>把每一步参数都交给你确认</h1><p>遵循受体、配体、搜索盒、Vina 参数、结果验证的标准顺序。AI 可以解释和检查，不能隐藏计算条件。</p></div><button id="load-demo" class="secondary">加载已验证示例</button></div>
+      <section class="card panel" data-panel="1">
+        <div class="panel-title"><div><span class="kicker">STEP 01</span><h2>受体准备</h2><p>上传经过检查的受体 PDBQT。后续版本可在此接入 Meeko 的 PDB/mmCIF 预处理。</p></div><span class="status-dot" id="receptor-status"></span></div>
+        <label class="file-drop"><input id="receptor-file" type="file" accept=".pdbqt,.txt" /><span class="upload-icon">↑</span><span><b>选择受体 PDBQT</b><small id="receptor-name">未选择文件</small></span></label>
+        <div class="file-meta" id="receptor-meta">文件会在提交前做 ATOM/HETATM 记录检查，并写入任务 provenance。</div>
+      </section>
+      <section class="card panel" data-panel="2">
+        <div class="panel-title"><div><span class="kicker">STEP 02</span><h2>配体准备</h2><p>一次添加一个或多个已经准备好的 PDBQT，保留每个配体的独立结果。</p></div><button id="add-ligand" class="secondary compact">＋ 添加配体</button></div>
+        <div id="ligand-list" class="ligand-list"><div class="empty">还没有配体。可以加载示例，或点击“添加配体”。</div></div>
+      </section>
+      <section class="card panel" data-panel="3">
+        <div class="panel-title"><div><span class="kicker">STEP 03</span><h2>结合位点与搜索盒</h2><p>中心和尺寸使用 Å。建议依据共晶配体、催化残基或已验证口袋设置。</p></div><span class="hint">Å</span></div>
+        <div class="field-grid three"><label>中心 X<input id="cx" type="number" step="0.001" value="15.614" /></label><label>中心 Y<input id="cy" type="number" step="0.001" value="53.380" /></label><label>中心 Z<input id="cz" type="number" step="0.001" value="15.455" /></label></div>
+        <div class="field-grid three"><label>尺寸 X<input id="sx" type="number" step="0.1" value="30" /></label><label>尺寸 Y<input id="sy" type="number" step="0.1" value="30" /></label><label>尺寸 Z<input id="sz" type="number" step="0.1" value="30" /></label></div>
+        <div class="callout">搜索盒不是“自动发现结合位点”。如果没有实验配体、催化残基或口袋证据，请先在对话区讨论，而不是默认为盲对接。</div>
+      </section>
+      <section class="card panel" data-panel="4">
+        <div class="panel-title"><div><span class="kicker">STEP 04</span><h2>Vina 参数</h2><p>参数会完整保存，便于复现、比较和批量筛选。</p></div><span class="engine-label">AutoDock Vina</span></div>
+        <div class="field-grid five"><label>exhaustiveness<input id="exhaustiveness" type="number" min="1" max="64" value="8" /></label><label>num_modes<input id="num_modes" type="number" min="1" max="20" value="9" /></label><label>energy_range<input id="energy_range" type="number" min="0" max="20" step="0.1" value="4" /></label><label>seed<input id="seed" type="number" min="0" value="20261028" /></label><label>CPU<input id="cpu" type="number" min="1" max="32" value="1" /></label></div>
+        <div class="callout neutral">Vina 是小分子对接引擎。其 affinity 估计值用于构象和候选排序，不能直接解释为酶活、结合常数或菌株耐胆盐能力。</div>
+      </section>
+      <section class="card panel run-panel" data-panel="5">
+        <div class="panel-title"><div><span class="kicker">STEP 05</span><h2>运行与结果</h2><p id="run-status">确认输入后启动批量对接。</p></div><button id="run-vina" class="primary">运行 Vina</button></div>
+        <div id="progress" class="progress hidden"><div class="progress-bar"><i></i></div><p></p></div>
+        <section id="pose-workbench" class="pose-workbench hidden" aria-label="三维姿态查看器">
+          <div class="pose-toolbar">
+            <div><b>姿态查看</b><small id="pose-summary">选择一个 docking mode 查看三维构象</small></div>
+            <div class="pose-actions"><label>Mode<select id="pose-mode" aria-label="选择 docking mode"></select></label><button id="pose-reset" class="secondary compact" type="button">复位视角</button><button id="pose-fullscreen" class="secondary compact" type="button">全屏</button></div>
+          </div>
+          <div class="pose-stage"><div id="viewer3d" role="img" aria-label="受体和配体三维结构"></div><div id="pose-loading" class="pose-loading">正在准备三维结构…</div></div>
+          <p class="pose-note">受体以卡通表示，配体以球棍表示。三维姿态用于检查构象和口袋关系，不替代实验结构验证。</p>
+        </section>
+        <div id="result" class="result empty">运行完成后，这里会显示每个配体的 pose、affinity、RMSD 和日志入口。</div>
+      </section>
+    </main>
+  </div>
+  <script src="3Dmol-min.js?v=20261029-local"></script>
+  <script src="vina-workbench.js?v=20261029-v2d"></script>
+</body>
+</html>

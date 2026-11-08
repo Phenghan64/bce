@@ -1,0 +1,151 @@
+{
+  "version": "2026-11-08.3",
+  "sources": {
+    "ebi_plddt": {
+      "title": "EMBL-EBI：pLDDT 局部置信度",
+      "url": "https://www.ebi.ac.uk/training/online/courses/alphafold/inputs-and-outputs/evaluating-alphafolds-predicted-structures-using-confidence-scores/plddt-understanding-local-confidence/",
+      "retrieved_at": "2026-11-07T23:07:06.663316+00:00",
+      "sha256": "df46a3e2bd6f198caf936ba8382324bc6dcacc28eabe13f54ee1672810669b48",
+      "http_status": 200
+    },
+    "af3_output": {
+      "title": "AlphaFold 3 官方输出定义",
+      "url": "https://raw.githubusercontent.com/google-deepmind/alphafold3/main/docs/output.md",
+      "retrieved_at": "2026-11-07T23:07:05.216035+00:00",
+      "sha256": "bb792ca2564e5a1f48512388efc4ffda00535f8847211e095f11ce15111362fe",
+      "http_status": 200
+    },
+    "vina_faq": {
+      "title": "AutoDock Vina 官方 FAQ",
+      "url": "https://autodock-vina.readthedocs.io/en/stable/faq.html",
+      "retrieved_at": "2026-11-07T23:07:05.547647+00:00",
+      "sha256": "085c9118cded1536570b0458ba097fb2a5adde81d1874c096af488b536b24e37",
+      "http_status": 200
+    },
+    "vina_manual": {
+      "title": "AutoDock Vina 官方手册",
+      "url": "https://vina.scripps.edu/manual/",
+      "retrieved_at": "2026-11-07T23:07:07.454176+00:00",
+      "sha256": "bc7d0cea36b8aeee491e75f29f24b99ddb6250d999b56b9c11a1eef32926fa68",
+      "http_status": 200
+    },
+    "eyoson_export": {
+      "title": "EYOSON 结构查看产物导出实现",
+      "path": "openfold3/export_viewer_artifact.py",
+      "sha256": "cd95d7a44e913d74441ddad3f18ecd4eef86e753ffc49dd7468e984ee76e0d4c",
+      "reviewed_at": "2026-11-08",
+      "kind": "implementation"
+    }
+  },
+  "cards": [
+    {
+      "topic": "plddt",
+      "title": "pLDDT",
+      "scope": "Distinguish AlphaFold2 residue-level, AlphaFold3 atom-level, and this platform display aggregation.",
+      "facts": [
+        {
+          "id": "plddt.definition",
+          "text": "pLDDT 是模型对局部 lDDT 准确性的预测，0–100，越高表示局部置信度越高；它不是只根据预测结构自身几何一致性直接算出的真实准确率，也不是与实验结构实测比较得到的 lDDT。 分数95不是95%的正确概率。",
+          "sources": [
+            "ebi_plddt"
+          ]
+        },
+        {
+          "id": "plddt.granularity",
+          "text": "AlphaFold2 通常逐残基输出，AlphaFold3 则逐原子输出 pLDDT；两者不能混称。低分可能来自无序、柔性或预测信息不足，不能单凭低分确定原因。",
+          "sources": [
+            "af3_output",
+            "ebi_plddt"
+          ]
+        },
+        {
+          "id": "plddt.display",
+          "text": "本平台 OpenFold3 查看产物保留原子 pLDDT；蛋白残基曲线按 mmCIF 的链/残基分组，对组内原子分数取算术平均。曲线汇总值、原始原子值和模型提供的整体 avg_plddt 口径有区别，不能假设整体均值等于曲线均值。 口径不同不代表数值必然不相等，数值可能恰好相同。",
+          "sources": [
+            "eyoson_export"
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "pae",
+      "title": "PAE",
+      "scope": "General meaning and AF3 documented array convention; local OpenFold display axes require its actual metadata.",
+      "facts": [
+        {
+          "id": "pae.definition",
+          "text": "PAE 是对相对位置误差的预测，单位 Å，越低表示相对位置越可信；不是原子间距离，也不是实验测出的误差。局部 pLDDT 高并不保证两个结构域的相对取向可靠。",
+          "sources": [
+            "af3_output",
+            "ebi_plddt"
+          ]
+        },
+        {
+          "id": "pae.tokens",
+          "text": "AlphaFold3 PAE 的原始数组按 token×token 组织；标准蛋白残基通常对应 token，小分子可按原子对应 token，复合物矩阵维度不一定等于蛋白残基数。 一个指定的 pae[i,j] 就是单个数值；只说第60号残基仍需指定与哪个 token 配对，或另定义某行/列、区域的统计量。区域平均只是可选统计，不是获得 PAE 单值的唯一方式。",
+          "sources": [
+            "af3_output"
+          ]
+        },
+        {
+          "id": "pae.axes",
+          "text": "AlphaFold3 官方 JSON 将 pae[i,j] 定义为按 token i 的框架对齐后 token j 的预期位置误差。这是有方向的量，不要求对称。具体 OpenFold3 文件或页面横纵轴必须核对其实现和元数据，不能直接套用其他软件的索引方向。",
+          "sources": [
+            "af3_output"
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "structure_confidence",
+      "title": "结构置信度与适用范围",
+      "scope": "Model confidence is not experimental validation; general workflow advice is distinguished from official metric definitions.",
+      "facts": [
+        {
+          "id": "structure.metrics",
+          "text": "pTM 用于评价整体结构置信度，ipTM 用于评价链间界面置信度，通常在 0–1 范围；单链无链间界面时 ipTM 不适用，不能把缺失值解释成零。",
+          "sources": [
+            "af3_output"
+          ]
+        },
+        {
+          "id": "structure.limits",
+          "text": "高置信度支持结构层面的判断，不能单独证明催化活性、底物特异性或真实结合。用于对接还应检查局部口袋、侧链、质子化和相关链/辅因子，并用目标体系的实验结构或已知配体评估。此处是基于指标含义与对接验证要求的工作流建议。",
+          "sources": [
+            "af3_output",
+            "vina_faq"
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "vina_interpretation",
+      "title": "Vina 结果解释",
+      "scope": "Standard Vina scoring/output, not experimental affinity, enzyme kinetics or strain phenotype.",
+      "facts": [
+        {
+          "id": "vina.score",
+          "text": "Vina affinity 以 kcal/mol 输出，是近似评分函数的预测；在相同受体准备、评分函数和可比搜索条件下，较负的分数可用于候选优先级参考。它不是实验结合自由能、酶活或抑制率；不能把分差直接当作实验倍数提升。",
+          "sources": [
+            "vina_manual",
+            "vina_faq"
+          ]
+        },
+        {
+          "id": "vina.rmsd",
+          "text": "Vina 表中的 rmsd l.b./u.b. 是各姿态相对最佳模式的重原子 RMSD 下界/上界，不是相对晶体配体的误差；第一模式为零不能证明还原实验姿态。重对接验证须另与实验配体比对。",
+          "sources": [
+            "vina_manual"
+          ]
+        },
+        {
+          "id": "vina.validation",
+          "text": "官方 FAQ 指出预测表现依赖具体靶标，应使用已知活性数据或共晶配体验证。提高 exhaustiveness 增加搜索投入、可能改善找到姿态的机会，不保证评分排序更接近实验；多种子稳定也不等于科学准确。",
+          "sources": [
+            "vina_faq"
+          ]
+        }
+      ]
+    }
+  ]
+}

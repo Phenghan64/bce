@@ -1,0 +1,32 @@
+{
+  "study": "10.3390/md18120599",
+  "status": "Retrospective protocol frozen after reading the paper and checking model compatibility, before full scoring. Not blinded or preregistered.",
+  "material": "Cod frame MCF; HCM is heated, deboned cod meat and is not a pure temperature control.",
+  "conditions": ["Alc-MCF", "Neut-MCF", "Neut&Alc-MCF", "Alc-HCM", "Neut-HCM", "Neut&Alc-HCM"],
+  "recipes": "Alcalase 2.4 or Neutrase 0.8, 50 C, pH 7.4, E/S 1.5% reported; singles 3 h; Neutrase then Alcalase 2x3 h. Stage-specific dosage and costs not inferred.",
+  "reference_proteome": "Ensembl release 90 gadMor1, matching the paper's older assembly. Only source-ID and exact-sequence verified mappings used. The other assembly and unidentified parents remain excluded from virtual digestion validation.",
+  "functional_models": {
+    "AnOxPePred": "Original v1 checkpoint, 3-30 standard amino acids. Outputs are model scores, not measured IC50 or calibrated industrial activity probabilities.",
+    "EmulsiPred": "Original Kyte-Doolittle normalization and functions; 7-30 aa. Max(alpha,beta,gamma) preselected aggregate; individual scores retained. No assumed experimental secondary structure.",
+    "compatibility": "Published peptide anchors checked, no score fitting to paper outcomes. Exact overlap with published training data flagged. Homology/training-source leakage cannot be fully excluded."
+  },
+  "release_validation": {
+    "scope": "End-state, sequence-only empirical cleavage surrogate, not kinetics, enzyme mechanism or yield prediction. The sequential condition is fitted to its own observed end state; enzyme order is not simulated or inferred by site unions.",
+    "parent_set": "MS-identified parents with exact sequence mapping; selection favors detectable proteins.",
+    "split": "Union components of proteins sharing any exact 10-mer, plus any possible parent IDs of the same observed peptide of length >=7. Hash lexicographically smallest component ID with SHA256; modulo 5 ==0 held out. Exclude any training peptide of length 7-30 that appears anywhere in held-out sequences. Residual remote homology can remain.",
+    "fit": "Per condition, only By MS/MS and PEP<=0.01, length7-30; distinct parent/start/end. Count cleaved terminal bonds versus intact internal bonds by adjacent amino-acid pair. Shrink each pair to global cut frequency with 20 pseudo observations. No parameter search.",
+    "score": "Log probability of two terminal cuts and no internal cuts under an independent-bond surrogate. Protein natural termini require no cut. Full enumeration of length7-30 in held-out full-length proteins, standard residues only. Same sequence deduplicated using maximum occurrence score.",
+    "baselines": "Global-cut-frequency length/terminus-only model; random expected recall.",
+    "metrics": "Recall of high-confidence observed peptides within top1% and10% unique candidates, enrichment over random. Missing spectra are not true biological negatives; no biological specificity or calibrated release probability claimed.",
+    "scale": "Functionally score union of top10000 unique virtual peptides from each of six conditions; retain full enumerated candidate scores in compressed output. This is an out-of-protein-study holdout, not an independent batch or species validation."
+  },
+  "bulk_validation": {
+    "primary": "Intensity-weighted model-score mean among in-domain peptides for FRS versus negative DPPH IC50, chelator versus negative Fe2+ IC50, max Emulsi score versus EAI. ESI secondary.",
+    "sensitivity": "Unweighted means; high-confidence By MS/MS, PEP<=0.01 only; predicted activity scores on length>=10 subset; fraction/intensity coverage reported.",
+    "baselines": "Same-domain intensity-weighted peptide length and GRAVY. Both endpoint signs described rather than selecting the winning direction after inspection.",
+    "statistics": "Spearman across six conditions, exact 720-permutation descriptive p-values, and within-material ordering. No confidence intervals based on treating six recipes as biological replicates. Published SD and significance groups retained; same-group results not asserted as distinct winners.",
+    "limitation": "Peptide composition comes from MS. Aggregate validation is retrospective measurement-informed association. No synthesized-peptide assays in this case; bulk associations cannot establish individual peptide activity."
+  },
+  "performance": "Record downloads/setup separately from measured compute; process-tree RSS sampled each second, wall time, CPU seconds and system swap. These runs do not benchmark OpenFold or Vina.",
+  "deliverables": "Auditable inputs/versions/hashes, sequence provenance, model scores, release validation, functional ranking, condition tradeoffs, resource measurements, Chinese report, and explicit failure findings."
+}

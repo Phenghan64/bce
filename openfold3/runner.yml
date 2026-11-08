@@ -1,0 +1,13 @@
+pl_trainer_args:
+  accelerator: mps
+  devices: 1
+  precision: 32-true
+  cluster_environment: local
+data_module_args:
+  num_workers: 0
+  num_workers_validation: 0
+experiment_settings:
+  seeds: [42]
+  use_templates: false
+model_update:
+  presets: [predict, low_mem]

@@ -1,0 +1,25 @@
+{
+  "cli_completed": true,
+  "error": null,
+  "elapsed_seconds": 0.09,
+  "timing_scope": "CLI import and execution; excludes Python/PyTorch startup and prior MSA/download stages",
+  "openfold3_version": "0.5.0",
+  "torch_version": "2.12.1",
+  "mps_available": true,
+  "mps_memory_fraction": 0.7,
+  "mps_recommended_max_bytes": 12713115648,
+  "process_peak_rss_bytes": 253706240,
+  "sampled_peak_mps_driver_bytes": 458752,
+  "system_swap_before_bytes": 180027392,
+  "system_swap_after_bytes": 180027392,
+  "memory_note": "RSS and MPS driver allocations overlap on unified memory; system swap includes all apps",
+  "samples": [
+    {
+      "seconds": 0.0,
+      "process_rss_bytes": 228229120,
+      "mps_tensor_bytes": 0,
+      "mps_driver_bytes": 458752,
+      "system_swap_used_bytes": 180027392
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+.env/
+.tools/
+results/
+__pycache__/
+.DS_Store
+.nextflow/
+.nextflow.log*
+*.log
+*.sqlite3*
+*.private.*
+*.secret.*
+__pycache__/
+*.pyc
+node_modules/
+dist/
+dist-*/

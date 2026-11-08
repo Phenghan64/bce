@@ -1,0 +1,17 @@
+[Unit]
+Description=Marine Scientific Deep Agent API
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker rm -f marine-agent-api
+ExecStart=/usr/bin/docker run --name marine-agent-api --network host --env-file /etc/marine-agent.env --volume /opt/marine-agent/app/results:/app/results marine-agent:20261029-vina-local-worker
+ExecStop=/usr/bin/docker stop --time 30 marine-agent-api
+ExecStopPost=-/usr/bin/docker rm marine-agent-api
+
+[Install]
+WantedBy=multi-user.target

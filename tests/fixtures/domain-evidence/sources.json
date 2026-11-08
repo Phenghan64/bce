@@ -1,0 +1,14 @@
+{
+  "retrieved": "2026-11-07",
+  "api": "https://www.ebi.ac.uk/interpro/matches/api",
+  "release": "110.0",
+  "sequence_sources": [
+    "UniProt P00782",
+    "UniProt P0A7V0",
+    "UniProt P69905"
+  ],
+  "raw_response_hashes": {
+    "info.json": "d9d85f74ce715a76d47644b7dcbc49d577e5174c76b92aac901d791cc89f1480",
+    "matches.json": "1b287e12f7b896f3c9111dce1d04e42fb88ebe8f991d91c3a8cc611bc8754a72"
+  }
+}

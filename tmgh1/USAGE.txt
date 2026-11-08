@@ -1,0 +1,44 @@
+TmGH1 round 1: an evidence-based interview case
+
+Report outputs: results/tmgh1-round1/report.html and report.txt.
+This is a retrospective public-data method evaluation, not a company-internal project or prospective wet-lab validation.
+
+What was frozen before prediction:
+- UniProt Q08638 native sequence, 446 residues. Deposited 468-residue constructs contain an expression prefix and engineered N terminus.
+- OpenFold3 protein-only inputs, templates disabled, cached MSA, seeds42/2026/20261021, fixed primary seed42, one sample each.
+- Two reference B-chain geometries: 2J77/NOJ and2J7E/GI2; both biological assemblies deposited as monomers.
+- Both crystal and all3 predicted geometries; two receptor protonation states; two states for each of two ligands; three Vina seeds; E32; 24A local boxes; 3workers x2threads.120 jobs.
+- No candidate affinity/kinetic data used to select the protocol. Closed template input does not exclude training-set exposure.
+
+Scripts (use the project environments):
+export_refs.py             Source audit, chain mapping, experimental coordinate alignment and ligand export.
+prepare_ligands.py         Independent ETKDG/MMFF ligand coordinates; predeclared charge states.
+freeze_protocol.py         One-time protocol JSON/input hashes; refuses overwrite.
+monitor.py                 Process-tree/system measurements, bounded stop criteria, saved failures.
+analyze_structures.py      All matched CA fit; pocket/sidechain/catalytic metrics; exports aligned predictions.
+prepare_receptor.py        PDBFixer, explicit catalytic protonation, fixed-heavy-atom OpenMM repair, Meeko.
+audit_preparation.py       Verify preservation, template O/OXT label swaps, H states and pocket repairs.
+run_after_prediction.py    Sequential preparation/audit/docking orchestration with stage logs.
+dock.py                    120 jobs, input-hash resume, identity/RMSD/contact checks; failed poses are not hidden.
+diagnose_geometry.py       Post-hoc coordinate/clash diagnosis, without retuning or extra docking.
+report.py                  Independent output validation, statistics and Chinese TXT/HTML report.
+plot.py                    Exportable structure/docking/resource and pose-comparison figures.
+
+Existing-results audit (does not rerun predictions or docking):
+./run.sh python tmgh1/audit_preparation.py
+./run.sh python tmgh1/diagnose_geometry.py
+./run.sh python tmgh1/report.py
+./run.sh python tmgh1/plot.py
+
+Resume completed docking using exactly the frozen inputs:
+./run.sh python tmgh1/dock.py
+This reuses validated outputs and writes docking-resume.json rather than replacing the original measured batch timing. Do not rerun the resource monitor into an existing measurement directory.
+
+Full reproduction requires a fresh output directory/version and corresponding paths. Scripts currently name this case's directory explicitly; they are a documented case workflow, not a general production service. Original-source downloads/URLs are in source/downloads.json; all model and Vina commands are in inference/resources.json, postprediction-stages.json and individual jobs/*/result.json. Python environments are pinned in the project's existing lock files. The official OpenFold checkpoint is referenced by path and verified SHA256, not copied into the report.
+
+Interpretation:
+-120 successful processes do not mean120 accurate poses.
+-Small global RMSD or high pLDDT does not automatically qualify a docking receptor.
+-Source structures and crystal-defined pocket centers make this a known-site retrospective test.
+-Single enzyme and two inhibitors; no industrial turnover, stability, peptide or activity-ranking claim.
+-RSS and MPS allocations overlap. Whole-system swap includes other applications; do not sum the memory numbers or claim unlimited device capacity.

@@ -1,0 +1,11 @@
+{
+  "queries": {
+    "ubiquitin": {
+      "chains": [{
+        "molecule_type": "protein",
+        "chain_ids": ["A"],
+        "sequence": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG"
+      }]
+    }
+  }
+}

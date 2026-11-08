@@ -1,0 +1,56 @@
+Thousand-compound Vina throughput benchmark
+
+Results: /Users/yili/Documents/ChatGPT/autodock/results/vina-throughput-1000
+
+Read report.txt for measured results, summary.json for all numeric details,
+throughput.png for resource/rate curves, and protocol.json for frozen rules.
+The receptor is the audited human ABL1 2HYY B structure from the preceding
+real-case experiment. Ligand source states are retained for this throughput
+benchmark; no activity labels, pKa validation, or OpenFold3 predictions are used.
+
+Selection: 1000 distinct eligible compounds from the RDKit NCI first5K example
+file, seed20261021, excluding unspecified potential atom and bond stereo.
+The eligible pool contained1086 compounds. One selected iodine-containing
+compound lacked MMFF parameters and was retained as a preparation failure.
+No replacement molecule was inserted. Actual screen:999 library+1control.
+
+Original sequence from project root:
+  ./run.sh python throughput/prepare.py results/vina-throughput-1000
+  ./openfold3/run.sh python throughput/monitor.py
+
+The preparation command requires a frozen protocol.json in the result folder.
+Existing prepared libraries are not overwritten. The monitor runs calibration,
+screening, then refinement, and refuses to overwrite earlier resource records.
+The OpenFold3 environment only supplies psutil to the monitor.
+
+Continue/check an existing run after verifying no runner remains active:
+  ./run.sh python throughput/run.py --output-dir results/vina-throughput-1000 --stage all
+  ./run.sh python throughput/check_resume.py
+Failed jobs are preserved unless --retry-failed is explicitly supplied. Input
+or parameter changes cause a signature mismatch. A runner.lock protects against
+two simultaneous queues; do not remove it while its process is active.
+
+Rebuild the report and charts from completed results:
+  ./run.sh python throughput/report.py
+  ./run.sh python throughput/plot.py
+
+Data layout:
+  source/                 Input example library and executed code snapshots
+  receptor/               Frozen receptor, box and experimental control pose
+  library.json            All1001 selected/prepared/failed entries, including control
+  jobs/<stage>/<id-seed>/  Commands, exit status, logs, PDBQT/SDF, checksums
+  resources.jsonl         Whole-run memory/CPU/swap samples at1-second intervals
+  screen-ranking.json     Scores for QC-passing outputs only; no activity labels
+  refine-ranking.json     Median score and three-seed pose consistency
+  resume-verification.json  Completed-output resume verification, not power-loss recovery
+
+Identity QC checks graph, charge, specified stereochemistry, finite coordinates
+and matching score/pose counts. It uses the previously tested NH+ annotation
+normalization from realcase/audit_outputs.py; it does not ignore carbon stereo.
+No failed compound is silently removed from failure accounting.
+
+Interpretation: E8 throughput is conditional on this receptor,30A search box,
+small-molecule complexity distribution and six-thread CPU budget. The higher
+intensity E32 three-seed refinement is measured separately. Completion-block
+rate changes alone cannot demonstrate heating or throttling. Memory sampling
+can double count shared pages; system metrics include unrelated applications.

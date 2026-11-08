@@ -1,0 +1,29 @@
+{
+  "seeds": [42],
+  "queries": {
+    "pdb_7L39_two_ligands": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": ["A"],
+          "sequence": "MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNCNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRCAAINMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRVITTFRTGTWDAYKNL"
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": ["X"],
+          "smiles": "Cc1ccccc1"
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": ["Y"],
+          "smiles": "Oc1ccccc1"
+        }
+      ],
+      "use_msas": true,
+      "use_paired_msas": false,
+      "use_main_msas": true,
+      "covalent_bonds": null,
+      "pocket_constraint": null
+    }
+  }
+}

@@ -1,0 +1,3406 @@
+{
+  "results": [
+    {
+      "md5": "8DCF3C56CDF4CD47E73688DBDA3BFABC",
+      "matches": [
+        {
+          "signature": {
+            "accession": "G3DSA:3.40.50.200:FF:000055",
+            "name": null,
+            "description": "Tk-subtilisin",
+            "type": "Region",
+            "signatureLibraryRelease": {
+              "library": "CATH-FunFam",
+              "version": "4.3.0"
+            },
+            "entry": null
+          },
+          "model-ac": "3.40.50.200-FF-000055",
+          "source": "CATH-FunFam",
+          "locations": [
+            {
+              "start": 106,
+              "end": 382,
+              "location-fragments": [
+                {
+                  "start": 106,
+                  "end": 382,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 3,
+              "hmmEnd": 282,
+              "hmmLength": 283,
+              "hmmBounds": "INCOMPLETE",
+              "envelopeStart": 106,
+              "envelopeEnd": 382,
+              "evalue": 8.6e-153,
+              "score": 509.3
+            }
+          ],
+          "score": 509.7,
+          "evalue": 6.8e-153
+        },
+        {
+          "signature": {
+            "accession": "G3DSA:3.30.70.80",
+            "name": null,
+            "description": "Peptidase S8 propeptide/proteinase inhibitor I9",
+            "type": "Homologous_superfamily",
+            "signatureLibraryRelease": {
+              "library": "CATH-Gene3D",
+              "version": "4.3.0"
+            },
+            "entry": {
+              "accession": "IPR037045",
+              "name": "S8pro/Inhibitor_I9_sf",
+              "description": "Peptidase S8 propeptide/proteinase inhibitor I9 superfamily",
+              "type": "Homologous_superfamily",
+              "parent": null
+            }
+          },
+          "model-ac": "3cnqP00",
+          "source": "CATH-Gene3D",
+          "locations": [
+            {
+              "start": 30,
+              "end": 109,
+              "location-fragments": [
+                {
+                  "start": 30,
+                  "end": 109,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 3,
+              "hmmEnd": 78,
+              "hmmLength": 80,
+              "hmmBounds": "INCOMPLETE",
+              "envelopeStart": 30,
+              "envelopeEnd": 110,
+              "evalue": 4.2e-25,
+              "score": 89.7
+            }
+          ],
+          "score": 90.5,
+          "evalue": 2.3e-25
+        },
+        {
+          "signature": {
+            "accession": "G3DSA:3.40.50.200",
+            "name": null,
+            "description": "Peptidase S8/S53 domain",
+            "type": "Homologous_superfamily",
+            "signatureLibraryRelease": {
+              "library": "CATH-Gene3D",
+              "version": "4.3.0"
+            },
+            "entry": {
+              "accession": "IPR036852",
+              "name": "Peptidase_S8/S53_dom_sf",
+              "description": "Peptidase S8/S53 domain superfamily",
+              "type": "Homologous_superfamily",
+              "parent": null
+            }
+          },
+          "model-ac": "1to2E00",
+          "source": "CATH-Gene3D",
+          "locations": [
+            {
+              "start": 110,
+              "end": 382,
+              "location-fragments": [
+                {
+                  "start": 110,
+                  "end": 382,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 4,
+              "hmmEnd": 275,
+              "hmmLength": 281,
+              "hmmBounds": "INCOMPLETE",
+              "envelopeStart": 108,
+              "envelopeEnd": 382,
+              "evalue": 1.8e-109,
+              "score": 367.2
+            }
+          ],
+          "score": 367.6,
+          "evalue": 1.4e-109
+        },
+        {
+          "signature": {
+            "accession": "cd07477",
+            "name": "Peptidases_S8_Subtilisin_subset",
+            "description": "Peptidase S8 family domain in Subtilisin proteins",
+            "type": "Domain",
+            "signatureLibraryRelease": {
+              "library": "CDD",
+              "version": "3.21"
+            },
+            "entry": {
+              "accession": "IPR034202",
+              "name": "Subtilisin_Carlsberg-like",
+              "description": "Subtilisin Carlsberg-like catalytic domain",
+              "type": "Domain",
+              "parent": "IPR000209"
+            }
+          },
+          "model-ac": "cd07477",
+          "source": "CDD",
+          "locations": [
+            {
+              "start": 132,
+              "end": 360,
+              "location-fragments": [
+                {
+                  "start": 132,
+                  "end": 360,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "evalue": 4.12462e-116,
+              "score": 335.27,
+              "sites": [
+                {
+                  "description": "active site",
+                  "numLocations": 6,
+                  "siteLocations": [
+                    {
+                      "start": 171,
+                      "end": 171,
+                      "residue": "H"
+                    },
+                    {
+                      "start": 214,
+                      "end": 214,
+                      "residue": "I"
+                    },
+                    {
+                      "start": 233,
+                      "end": 233,
+                      "residue": "L"
+                    },
+                    {
+                      "start": 262,
+                      "end": 262,
+                      "residue": "N"
+                    },
+                    {
+                      "start": 328,
+                      "end": 328,
+                      "residue": "S"
+                    },
+                    {
+                      "start": 139,
+                      "end": 139,
+                      "residue": "D"
+                    }
+                  ]
+                },
+                {
+                  "description": "catalytic residues",
+                  "numLocations": 3,
+                  "siteLocations": [
+                    {
+                      "start": 139,
+                      "end": 139,
+                      "residue": "D"
+                    },
+                    {
+                      "start": 171,
+                      "end": 171,
+                      "residue": "H"
+                    },
+                    {
+                      "start": 328,
+                      "end": 328,
+                      "residue": "S"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PTHR43806",
+            "name": null,
+            "description": "PEPTIDASE S8",
+            "type": "Family",
+            "signatureLibraryRelease": {
+              "library": "PANTHER",
+              "version": "19.0"
+            },
+            "entry": {
+              "accession": "IPR050131",
+              "name": "Peptidase_S8_subtilisin-like",
+              "description": "Subtilisin-like serine protease",
+              "type": "Family",
+              "parent": null
+            }
+          },
+          "model-ac": "PTHR43806:SF11",
+          "source": "PANTHER",
+          "locations": [
+            {
+              "start": 32,
+              "end": 370,
+              "location-fragments": [
+                {
+                  "start": 32,
+                  "end": 370,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 42,
+              "hmmEnd": 406,
+              "hmmLength": 582,
+              "hmmBounds": "INCOMPLETE",
+              "envelopeStart": 8,
+              "envelopeEnd": 381,
+              "evalue": 3.5e-87,
+              "score": 305.5
+            }
+          ],
+          "score": 305.5,
+          "evalue": 3.5e-87,
+          "ancestralNode": "AN829"
+        },
+        {
+          "signature": {
+            "accession": "PF00082",
+            "name": "Peptidase_S8",
+            "description": "Subtilase family",
+            "type": "Domain",
+            "signatureLibraryRelease": {
+              "library": "Pfam",
+              "version": "38.2"
+            },
+            "entry": {
+              "accession": "IPR000209",
+              "name": "Peptidase_S8/S53_dom",
+              "description": "Peptidase S8/S53 domain",
+              "type": "Domain",
+              "parent": null
+            }
+          },
+          "model-ac": "PF00082",
+          "source": "Pfam",
+          "locations": [
+            {
+              "start": 130,
+              "end": 373,
+              "location-fragments": [
+                {
+                  "start": 130,
+                  "end": 373,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 1,
+              "hmmEnd": 287,
+              "hmmLength": 287,
+              "hmmBounds": "COMPLETE",
+              "envelopeStart": 130,
+              "envelopeEnd": 373,
+              "evalue": 3e-69,
+              "score": 245.1
+            }
+          ],
+          "score": 245.6,
+          "evalue": 2e-69
+        },
+        {
+          "signature": {
+            "accession": "PF22148",
+            "name": "Fervidolysin_NPro-like",
+            "description": "Fervidolysin N-terminal prodomain",
+            "type": "Domain",
+            "signatureLibraryRelease": {
+              "library": "Pfam",
+              "version": "38.2"
+            },
+            "entry": {
+              "accession": "IPR054399",
+              "name": "Fervidolysin-like_N_prodom",
+              "description": "Fervidolysin-like, N-terminal prodomain",
+              "type": "Domain",
+              "parent": null
+            }
+          },
+          "model-ac": "PF22148",
+          "source": "Pfam",
+          "locations": [
+            {
+              "start": 41,
+              "end": 99,
+              "location-fragments": [
+                {
+                  "start": 41,
+                  "end": 99,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 21,
+              "hmmEnd": 79,
+              "hmmLength": 81,
+              "hmmBounds": "INCOMPLETE",
+              "envelopeStart": 26,
+              "envelopeEnd": 101,
+              "evalue": 0.087,
+              "score": 24.5
+            }
+          ],
+          "score": 25.7,
+          "evalue": 0.038
+        },
+        {
+          "signature": {
+            "accession": "SIGNAL_PEPTIDE",
+            "name": null,
+            "description": "Signal Peptide",
+            "type": "Region",
+            "signatureLibraryRelease": {
+              "library": "Phobius",
+              "version": "1.01"
+            },
+            "entry": null
+          },
+          "model-ac": "SIGNAL_PEPTIDE",
+          "source": "Phobius",
+          "locations": [
+            {
+              "start": 1,
+              "end": 30,
+              "location-fragments": [
+                {
+                  "start": 1,
+                  "end": 30,
+                  "dc-status": "CONTINUOUS"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "SIGNAL_PEPTIDE_N_REGION",
+            "name": null,
+            "description": "Signal peptide N-region",
+            "type": "Region",
+            "signatureLibraryRelease": {
+              "library": "Phobius",
+              "version": "1.01"
+            },
+            "entry": null
+          },
+          "model-ac": "SIGNAL_PEPTIDE_N_REGION",
+          "source": "Phobius",
+          "locations": [
+            {
+              "start": 1,
+              "end": 5,
+              "location-fragments": [
+                {
+                  "start": 1,
+                  "end": 5,
+                  "dc-status": "CONTINUOUS"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "SIGNAL_PEPTIDE_H_REGION",
+            "name": null,
+            "description": "Signal peptide H-region",
+            "type": "Region",
+            "signatureLibraryRelease": {
+              "library": "Phobius",
+              "version": "1.01"
+            },
+            "entry": null
+          },
+          "model-ac": "SIGNAL_PEPTIDE_H_REGION",
+          "source": "Phobius",
+          "locations": [
+            {
+              "start": 6,
+              "end": 18,
+              "location-fragments": [
+                {
+                  "start": 6,
+                  "end": 18,
+                  "dc-status": "CONTINUOUS"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "SIGNAL_PEPTIDE_C_REGION",
+            "name": null,
+            "description": "Signal peptide C-region",
+            "type": "Region",
+            "signatureLibraryRelease": {
+              "library": "Phobius",
+              "version": "1.01"
+            },
+            "entry": null
+          },
+          "model-ac": "SIGNAL_PEPTIDE_C_REGION",
+          "source": "Phobius",
+          "locations": [
+            {
+              "start": 19,
+              "end": 30,
+              "location-fragments": [
+                {
+                  "start": 19,
+                  "end": 30,
+                  "dc-status": "CONTINUOUS"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "NON_CYTOPLASMIC_DOMAIN",
+            "name": null,
+            "description": "Non cytoplasmic domain",
+            "type": "Region",
+            "signatureLibraryRelease": {
+              "library": "Phobius",
+              "version": "1.01"
+            },
+            "entry": null
+          },
+          "model-ac": "NON_CYTOPLASMIC_DOMAIN",
+          "source": "Phobius",
+          "locations": [
+            {
+              "start": 31,
+              "end": 382,
+              "location-fragments": [
+                {
+                  "start": 31,
+                  "end": 382,
+                  "dc-status": "CONTINUOUS"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PIRSR015477-1",
+            "name": "PIRSR015477-1",
+            "description": null,
+            "type": "Region",
+            "signatureLibraryRelease": {
+              "library": "PIRSR",
+              "version": "2025_05"
+            },
+            "entry": null
+          },
+          "model-ac": "PIRSR015477-1",
+          "source": "PIRSR",
+          "locations": [
+            {
+              "start": 88,
+              "end": 378,
+              "location-fragments": [
+                {
+                  "start": 88,
+                  "end": 378,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 177,
+              "hmmEnd": 509,
+              "hmmLength": 1442,
+              "hmmBounds": "INCOMPLETE",
+              "envelopeStart": 65,
+              "envelopeEnd": 382,
+              "evalue": 7.7e-33,
+              "score": 111.4,
+              "sites": [
+                {
+                  "description": "ACT_SITE: Charge relay system",
+                  "numLocations": 3,
+                  "siteLocations": [
+                    {
+                      "start": 139,
+                      "end": 139,
+                      "residue": "D"
+                    },
+                    {
+                      "start": 171,
+                      "end": 171,
+                      "residue": "H"
+                    },
+                    {
+                      "start": 328,
+                      "end": 328,
+                      "residue": "S"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "score": 111.4,
+          "evalue": 7.7e-33
+        },
+        {
+          "signature": {
+            "accession": "PR00723",
+            "name": "SUBTILISIN",
+            "description": null,
+            "type": "Family",
+            "signatureLibraryRelease": {
+              "library": "PRINTS",
+              "version": "42.0"
+            },
+            "entry": {
+              "accession": "IPR015500",
+              "name": "Peptidase_S8_subtilisin-rel",
+              "description": "Peptidase S8, subtilisin-related",
+              "type": "Family",
+              "parent": null
+            }
+          },
+          "model-ac": "PR00723",
+          "source": "PRINTS",
+          "locations": [
+            {
+              "start": 130,
+              "end": 149,
+              "location-fragments": [
+                {
+                  "start": 130,
+                  "end": 149,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 1.3e-11,
+              "pvalue": 47.47,
+              "motifNumber": 1
+            },
+            {
+              "start": 167,
+              "end": 180,
+              "location-fragments": [
+                {
+                  "start": 167,
+                  "end": 180,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 1.49e-08,
+              "pvalue": 61.06,
+              "motifNumber": 2
+            },
+            {
+              "start": 325,
+              "end": 341,
+              "location-fragments": [
+                {
+                  "start": 325,
+                  "end": 341,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 2.41e-11,
+              "pvalue": 61.9,
+              "motifNumber": 3
+            }
+          ],
+          "evalue": 7.7e-24,
+          "graphscan": "III"
+        },
+        {
+          "signature": {
+            "accession": "PS00136",
+            "name": "SUBTILASE_ASP",
+            "description": "Serine proteases, subtilase family, aspartic acid active site",
+            "type": "Conserved_site",
+            "signatureLibraryRelease": {
+              "library": "PROSITE patterns",
+              "version": "2026_01"
+            },
+            "entry": {
+              "accession": "IPR023827",
+              "name": "Peptidase_S8_Asp-AS",
+              "description": "Peptidase S8, subtilisin, Asp-active site",
+              "type": "Active_site",
+              "parent": null
+            }
+          },
+          "model-ac": "PS00136",
+          "source": "PROSITE patterns",
+          "locations": [
+            {
+              "start": 135,
+              "end": 146,
+              "location-fragments": [
+                {
+                  "start": 135,
+                  "end": 146,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "cigarAlignment": "8M3I1M"
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PS00137",
+            "name": "SUBTILASE_HIS",
+            "description": "Serine proteases, subtilase family, histidine active site",
+            "type": "Conserved_site",
+            "signatureLibraryRelease": {
+              "library": "PROSITE patterns",
+              "version": "2026_01"
+            },
+            "entry": {
+              "accession": "IPR022398",
+              "name": "Peptidase_S8_His-AS",
+              "description": "Peptidase S8, subtilisin, His-active site",
+              "type": "Active_site",
+              "parent": null
+            }
+          },
+          "model-ac": "PS00137",
+          "source": "PROSITE patterns",
+          "locations": [
+            {
+              "start": 171,
+              "end": 181,
+              "location-fragments": [
+                {
+                  "start": 171,
+                  "end": 181,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "cigarAlignment": "3M1I3M1I3M"
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PS00138",
+            "name": "SUBTILASE_SER",
+            "description": "Serine proteases, subtilase family, serine active site",
+            "type": "Conserved_site",
+            "signatureLibraryRelease": {
+              "library": "PROSITE patterns",
+              "version": "2026_01"
+            },
+            "entry": {
+              "accession": "IPR023828",
+              "name": "Peptidase_S8_Ser-AS",
+              "description": "Peptidase S8, subtilisin, Ser-active site",
+              "type": "Active_site",
+              "parent": null
+            }
+          },
+          "model-ac": "PS00138",
+          "source": "PROSITE patterns",
+          "locations": [
+            {
+              "start": 326,
+              "end": 336,
+              "location-fragments": [
+                {
+                  "start": 326,
+                  "end": 336,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "cigarAlignment": "3M1I1M1I1M1I3M"
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PS51892",
+            "name": "SUBTILASE",
+            "description": "Serine proteases, subtilase domain profile",
+            "type": "Domain",
+            "signatureLibraryRelease": {
+              "library": "PROSITE profiles",
+              "version": "2026_01"
+            },
+            "entry": null
+          },
+          "model-ac": "PS51892",
+          "source": "PROSITE profiles",
+          "locations": [
+            {
+              "start": 112,
+              "end": 381,
+              "location-fragments": [
+                {
+                  "start": 112,
+                  "end": 381,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 61.592953,
+              "cigarAlignment": "8M3D30M2D16M1D17M1D56M3D32M1D47M2D48M3D16M"
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "SignalP-Sec-SPI",
+            "name": "Sec/SPI",
+            "description": "standard secretory signal peptides transported by the Sec translocon and cleaved by Signal Peptidase I (Lep)",
+            "type": "Region",
+            "signatureLibraryRelease": {
+              "library": "SignalP",
+              "version": "6.0i"
+            },
+            "entry": null
+          },
+          "model-ac": "SignalP_fast_eukarya",
+          "source": "SignalP",
+          "locations": [
+            {
+              "start": 1,
+              "end": 30,
+              "location-fragments": [
+                {
+                  "start": 1,
+                  "end": 30,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9997659
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "SignalP-Sec-SPI",
+            "name": "Sec/SPI",
+            "description": "standard secretory signal peptides transported by the Sec translocon and cleaved by Signal Peptidase I (Lep)",
+            "type": "Region",
+            "signatureLibraryRelease": {
+              "library": "SignalP",
+              "version": "6.0i"
+            },
+            "entry": null
+          },
+          "model-ac": "SignalP_fast_other",
+          "source": "SignalP",
+          "locations": [
+            {
+              "start": 1,
+              "end": 30,
+              "location-fragments": [
+                {
+                  "start": 1,
+                  "end": 30,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99917805
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "SSF52743",
+            "name": null,
+            "description": "Subtilisin-like",
+            "type": "Homologous_superfamily",
+            "signatureLibraryRelease": {
+              "library": "SUPERFAMILY",
+              "version": "1.75"
+            },
+            "entry": {
+              "accession": "IPR036852",
+              "name": "Peptidase_S8/S53_dom_sf",
+              "description": "Peptidase S8/S53 domain superfamily",
+              "type": "Homologous_superfamily",
+              "parent": null
+            }
+          },
+          "model-ac": "0050066",
+          "source": "SUPERFAMILY",
+          "locations": [
+            {
+              "start": 108,
+              "end": 381,
+              "location-fragments": [
+                {
+                  "start": 108,
+                  "end": 381,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmLength": 435,
+              "evalue": 6.94e-95
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "SSF54897",
+            "name": null,
+            "description": "Protease propeptides/inhibitors",
+            "type": "Homologous_superfamily",
+            "signatureLibraryRelease": {
+              "library": "SUPERFAMILY",
+              "version": "1.75"
+            },
+            "entry": null
+          },
+          "model-ac": "0049360",
+          "source": "SUPERFAMILY",
+          "locations": [
+            {
+              "start": 37,
+              "end": 106,
+              "location-fragments": [
+                {
+                  "start": 37,
+                  "end": 106,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmLength": 71,
+              "evalue": 1.7e-23
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "Signal_peptide",
+            "name": null,
+            "description": "Signal peptide",
+            "type": "Region",
+            "signatureLibraryRelease": {
+              "library": "TMbed",
+              "version": "1.0.2"
+            },
+            "entry": null
+          },
+          "model-ac": "Signal_peptide",
+          "source": "TMbed",
+          "locations": [
+            {
+              "start": 1,
+              "end": 30,
+              "location-fragments": [
+                {
+                  "start": 1,
+                  "end": 30,
+                  "dc-status": "CONTINUOUS"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PF22148",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "Pfam",
+              "version": "37.3"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 37,
+              "end": 103,
+              "location-fragments": [
+                {
+                  "start": 37,
+                  "end": 103,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9354774
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PF00082",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "Pfam",
+              "version": "37.3"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 130,
+              "end": 373,
+              "location-fragments": [
+                {
+                  "start": 130,
+                  "end": 373,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99999624
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PTHR43806",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "PANTHER",
+              "version": "19.0"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 31,
+              "end": 368,
+              "location-fragments": [
+                {
+                  "start": 31,
+                  "end": 368,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9998119
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PR00723",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "PRINTS",
+              "version": "42.0"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 130,
+              "end": 149,
+              "location-fragments": [
+                {
+                  "start": 130,
+                  "end": 149,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.999971
+            },
+            {
+              "start": 167,
+              "end": 180,
+              "location-fragments": [
+                {
+                  "start": 167,
+                  "end": 180,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99995226
+            },
+            {
+              "start": 325,
+              "end": 341,
+              "location-fragments": [
+                {
+                  "start": 325,
+                  "end": 341,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99992955
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PS51892",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "PROSITE profiles",
+              "version": "2025_01"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 112,
+              "end": 382,
+              "location-fragments": [
+                {
+                  "start": 112,
+                  "end": 382,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.999994
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "SSF52743",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "SUPERFAMILY",
+              "version": "1.75"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 110,
+              "end": 381,
+              "location-fragments": [
+                {
+                  "start": 110,
+                  "end": 381,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9998786
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "SSF54897",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "SUPERFAMILY",
+              "version": "1.75"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 37,
+              "end": 105,
+              "location-fragments": [
+                {
+                  "start": 37,
+                  "end": 105,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99799865
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "G3DSA:3.40.50.200",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "CATH-Gene3D",
+              "version": "4.3.0"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 108,
+              "end": 382,
+              "location-fragments": [
+                {
+                  "start": 108,
+                  "end": 382,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99994135
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "G3DSA:3.30.70.80",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "CATH-Gene3D",
+              "version": "4.3.0"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 31,
+              "end": 106,
+              "location-fragments": [
+                {
+                  "start": 31,
+                  "end": 106,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9998569
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PS00138",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "PROSITE patterns",
+              "version": "2025_01"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 326,
+              "end": 336,
+              "location-fragments": [
+                {
+                  "start": 326,
+                  "end": 336,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9999873
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PS00136",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "PROSITE patterns",
+              "version": "2025_01"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 135,
+              "end": 146,
+              "location-fragments": [
+                {
+                  "start": 135,
+                  "end": 146,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99994385
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PS00137",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "PROSITE patterns",
+              "version": "2025_01"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 171,
+              "end": 181,
+              "location-fragments": [
+                {
+                  "start": 171,
+                  "end": 181,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9999939
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "cd07477",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "CDD",
+              "version": "3.21"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 132,
+              "end": 360,
+              "location-fragments": [
+                {
+                  "start": 132,
+                  "end": 360,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9999778
+            }
+          ]
+        }
+      ],
+      "found": true
+    },
+    {
+      "md5": "F0974D30D7835F4B52B27C2F40E89CA4",
+      "matches": [
+        {
+          "signature": {
+            "accession": "G3DSA:1.10.287.610:FF:000001",
+            "name": null,
+            "description": "30S ribosomal protein S2",
+            "type": "Region",
+            "signatureLibraryRelease": {
+              "library": "CATH-FunFam",
+              "version": "4.3.0"
+            },
+            "entry": null
+          },
+          "model-ac": "1.10.287.610-FF-000001",
+          "source": "CATH-FunFam",
+          "locations": [
+            {
+              "start": 102,
+              "end": 151,
+              "location-fragments": [
+                {
+                  "start": 102,
+                  "end": 151,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 1,
+              "hmmEnd": 50,
+              "hmmLength": 50,
+              "hmmBounds": "COMPLETE",
+              "envelopeStart": 102,
+              "envelopeEnd": 151,
+              "evalue": 8.4e-24,
+              "score": 85.3
+            }
+          ],
+          "score": 86.2,
+          "evalue": 4.7e-24
+        },
+        {
+          "signature": {
+            "accession": "G3DSA:3.40.50.10490",
+            "name": null,
+            "description": "Glucose-6-phosphate isomerase like protein; domain 1",
+            "type": "Homologous_superfamily",
+            "signatureLibraryRelease": {
+              "library": "CATH-Gene3D",
+              "version": "4.3.0"
+            },
+            "entry": null
+          },
+          "model-ac": "5xyiA01",
+          "source": "CATH-Gene3D",
+          "locations": [
+            {
+              "start": 7,
+              "end": 241,
+              "location-fragments": [
+                {
+                  "start": 7,
+                  "end": 104,
+                  "dc-status": "C_TERMINAL_DISC"
+                },
+                {
+                  "start": 151,
+                  "end": 241,
+                  "dc-status": "N_TERMINAL_DISC"
+                }
+              ],
+              "hmmStart": 3,
+              "hmmEnd": 181,
+              "hmmLength": 206,
+              "hmmBounds": "INCOMPLETE",
+              "envelopeStart": 7,
+              "envelopeEnd": 241,
+              "evalue": 4.1e-72,
+              "score": 243.5
+            }
+          ],
+          "score": 243.6,
+          "evalue": 3.7e-72
+        },
+        {
+          "signature": {
+            "accession": "G3DSA:1.10.287.610",
+            "name": null,
+            "description": "Helix hairpin bin",
+            "type": "Homologous_superfamily",
+            "signatureLibraryRelease": {
+              "library": "CATH-Gene3D",
+              "version": "4.3.0"
+            },
+            "entry": null
+          },
+          "model-ac": "4toiA02",
+          "source": "CATH-Gene3D",
+          "locations": [
+            {
+              "start": 105,
+              "end": 150,
+              "location-fragments": [
+                {
+                  "start": 105,
+                  "end": 150,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 1,
+              "hmmEnd": 48,
+              "hmmLength": 48,
+              "hmmBounds": "COMPLETE",
+              "envelopeStart": 103,
+              "envelopeEnd": 150,
+              "evalue": 1.2e-23,
+              "score": 84.5
+            }
+          ],
+          "score": 85.2,
+          "evalue": 7.6e-24
+        },
+        {
+          "signature": {
+            "accession": "cd01425",
+            "name": "RPS2",
+            "description": null,
+            "type": "Domain",
+            "signatureLibraryRelease": {
+              "library": "CDD",
+              "version": "3.21"
+            },
+            "entry": {
+              "accession": "IPR001865",
+              "name": "Ribosomal_uS2",
+              "description": "Small ribosomal subunit protein uS2",
+              "type": "Family",
+              "parent": null
+            }
+          },
+          "model-ac": "cd01425",
+          "source": "CDD",
+          "locations": [
+            {
+              "start": 9,
+              "end": 223,
+              "location-fragments": [
+                {
+                  "start": 9,
+                  "end": 223,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "evalue": 5.3273e-107,
+              "score": 305.275,
+              "sites": [
+                {
+                  "description": "rRNA interaction site",
+                  "numLocations": 13,
+                  "siteLocations": [
+                    {
+                      "start": 25,
+                      "end": 25,
+                      "residue": "P"
+                    },
+                    {
+                      "start": 26,
+                      "end": 26,
+                      "residue": "K"
+                    },
+                    {
+                      "start": 35,
+                      "end": 35,
+                      "residue": "R"
+                    },
+                    {
+                      "start": 36,
+                      "end": 36,
+                      "residue": "N"
+                    },
+                    {
+                      "start": 37,
+                      "end": 37,
+                      "residue": "K"
+                    },
+                    {
+                      "start": 95,
+                      "end": 95,
+                      "residue": "R"
+                    },
+                    {
+                      "start": 97,
+                      "end": 97,
+                      "residue": "L"
+                    },
+                    {
+                      "start": 98,
+                      "end": 98,
+                      "residue": "G"
+                    },
+                    {
+                      "start": 99,
+                      "end": 99,
+                      "residue": "G"
+                    },
+                    {
+                      "start": 102,
+                      "end": 102,
+                      "residue": "T"
+                    },
+                    {
+                      "start": 103,
+                      "end": 103,
+                      "residue": "N"
+                    },
+                    {
+                      "start": 175,
+                      "end": 175,
+                      "residue": "E"
+                    },
+                    {
+                      "start": 178,
+                      "end": 178,
+                      "residue": "N"
+                    }
+                  ]
+                },
+                {
+                  "description": "S8 interaction site",
+                  "numLocations": 7,
+                  "siteLocations": [
+                    {
+                      "start": 177,
+                      "end": 177,
+                      "residue": "N"
+                    },
+                    {
+                      "start": 178,
+                      "end": 178,
+                      "residue": "N"
+                    },
+                    {
+                      "start": 180,
+                      "end": 180,
+                      "residue": "G"
+                    },
+                    {
+                      "start": 194,
+                      "end": 194,
+                      "residue": "D"
+                    },
+                    {
+                      "start": 195,
+                      "end": 195,
+                      "residue": "G"
+                    },
+                    {
+                      "start": 196,
+                      "end": 196,
+                      "residue": "V"
+                    },
+                    {
+                      "start": 197,
+                      "end": 197,
+                      "residue": "D"
+                    }
+                  ]
+                },
+                {
+                  "description": "putative laminin-1 binding site",
+                  "numLocations": 6,
+                  "siteLocations": [
+                    {
+                      "start": 212,
+                      "end": 212,
+                      "residue": "L"
+                    },
+                    {
+                      "start": 213,
+                      "end": 213,
+                      "residue": "Y"
+                    },
+                    {
+                      "start": 214,
+                      "end": 214,
+                      "residue": "L"
+                    },
+                    {
+                      "start": 215,
+                      "end": 215,
+                      "residue": "G"
+                    },
+                    {
+                      "start": 216,
+                      "end": 216,
+                      "residue": "A"
+                    },
+                    {
+                      "start": 217,
+                      "end": 217,
+                      "residue": "V"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PTHR12534",
+            "name": null,
+            "description": "30S RIBOSOMAL PROTEIN S2 PROKARYOTIC AND ORGANELLAR",
+            "type": "Family",
+            "signatureLibraryRelease": {
+              "library": "PANTHER",
+              "version": "19.0"
+            },
+            "entry": {
+              "accession": "IPR005706",
+              "name": "Ribosomal_uS2_bac/mit/plastid",
+              "description": "Small ribosomal subunit protein uS2, bacteria/mitochondria/plastid",
+              "type": "Family",
+              "parent": "IPR001865"
+            }
+          },
+          "model-ac": "PTHR12534:SF0",
+          "source": "PANTHER",
+          "locations": [
+            {
+              "start": 3,
+              "end": 236,
+              "location-fragments": [
+                {
+                  "start": 3,
+                  "end": 236,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 21,
+              "hmmEnd": 222,
+              "hmmLength": 232,
+              "hmmBounds": "INCOMPLETE",
+              "envelopeStart": 1,
+              "envelopeEnd": 241,
+              "evalue": 4.6e-72,
+              "score": 253.4
+            }
+          ],
+          "score": 253.4,
+          "evalue": 4.6e-72,
+          "ancestralNode": "AN290"
+        },
+        {
+          "signature": {
+            "accession": "PF00318",
+            "name": "Ribosomal_S2",
+            "description": "Ribosomal protein S2",
+            "type": "Family",
+            "signatureLibraryRelease": {
+              "library": "Pfam",
+              "version": "38.2"
+            },
+            "entry": {
+              "accession": "IPR001865",
+              "name": "Ribosomal_uS2",
+              "description": "Small ribosomal subunit protein uS2",
+              "type": "Family",
+              "parent": null
+            }
+          },
+          "model-ac": "PF00318",
+          "source": "Pfam",
+          "locations": [
+            {
+              "start": 9,
+              "end": 224,
+              "location-fragments": [
+                {
+                  "start": 9,
+                  "end": 224,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 1,
+              "hmmEnd": 216,
+              "hmmLength": 216,
+              "hmmBounds": "COMPLETE",
+              "envelopeStart": 9,
+              "envelopeEnd": 224,
+              "evalue": 1.8e-93,
+              "score": 323.3
+            }
+          ],
+          "score": 323.4,
+          "evalue": 1.6e-93
+        },
+        {
+          "signature": {
+            "accession": "PR00395",
+            "name": "RIBOSOMALS2",
+            "description": null,
+            "type": "Family",
+            "signatureLibraryRelease": {
+              "library": "PRINTS",
+              "version": "42.0"
+            },
+            "entry": {
+              "accession": "IPR001865",
+              "name": "Ribosomal_uS2",
+              "description": "Small ribosomal subunit protein uS2",
+              "type": "Family",
+              "parent": null
+            }
+          },
+          "model-ac": "PR00395",
+          "source": "PRINTS",
+          "locations": [
+            {
+              "start": 6,
+              "end": 24,
+              "location-fragments": [
+                {
+                  "start": 6,
+                  "end": 24,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 1.91e-10,
+              "pvalue": 47.29,
+              "motifNumber": 1
+            },
+            {
+              "start": 37,
+              "end": 46,
+              "location-fragments": [
+                {
+                  "start": 37,
+                  "end": 46,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 2.9e-05,
+              "pvalue": 53.54,
+              "motifNumber": 2
+            },
+            {
+              "start": 87,
+              "end": 104,
+              "location-fragments": [
+                {
+                  "start": 87,
+                  "end": 104,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 4.33e-10,
+              "pvalue": 48.03,
+              "motifNumber": 3
+            },
+            {
+              "start": 158,
+              "end": 175,
+              "location-fragments": [
+                {
+                  "start": 158,
+                  "end": 175,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 7.97e-08,
+              "pvalue": 42.99,
+              "motifNumber": 4
+            },
+            {
+              "start": 175,
+              "end": 186,
+              "location-fragments": [
+                {
+                  "start": 175,
+                  "end": 186,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 1.02e-05,
+              "pvalue": 49.23,
+              "motifNumber": 5
+            },
+            {
+              "start": 196,
+              "end": 210,
+              "location-fragments": [
+                {
+                  "start": 196,
+                  "end": 210,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 4.93e-08,
+              "pvalue": 52.0,
+              "motifNumber": 6
+            }
+          ],
+          "evalue": 8.8e-38,
+          "graphscan": "IIIIII"
+        },
+        {
+          "signature": {
+            "accession": "PS00962",
+            "name": "RIBOSOMAL_S2_1",
+            "description": "Ribosomal protein S2 signature 1",
+            "type": "Conserved_site",
+            "signatureLibraryRelease": {
+              "library": "PROSITE patterns",
+              "version": "2026_01"
+            },
+            "entry": {
+              "accession": "IPR018130",
+              "name": "Ribosomal_uS2_CS",
+              "description": "Small ribosomal subunit protein uS2, conserved site",
+              "type": "Conserved_site",
+              "parent": null
+            }
+          },
+          "model-ac": "PS00962",
+          "source": "PROSITE patterns",
+          "locations": [
+            {
+              "start": 6,
+              "end": 17,
+              "location-fragments": [
+                {
+                  "start": 6,
+                  "end": 17,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "cigarAlignment": "1M1I10M"
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PS00963",
+            "name": "RIBOSOMAL_S2_2",
+            "description": "Ribosomal protein S2 signature 2",
+            "type": "Conserved_site",
+            "signatureLibraryRelease": {
+              "library": "PROSITE patterns",
+              "version": "2026_01"
+            },
+            "entry": {
+              "accession": "IPR018130",
+              "name": "Ribosomal_uS2_CS",
+              "description": "Small ribosomal subunit protein uS2, conserved site",
+              "type": "Conserved_site",
+              "parent": null
+            }
+          },
+          "model-ac": "PS00963",
+          "source": "PROSITE patterns",
+          "locations": [
+            {
+              "start": 158,
+              "end": 182,
+              "location-fragments": [
+                {
+                  "start": 158,
+                  "end": 182,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "cigarAlignment": "1M2I3M1I1M3I1M3I1M1I1M4I3M"
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "SSF52313",
+            "name": null,
+            "description": "Ribosomal protein S2",
+            "type": "Homologous_superfamily",
+            "signatureLibraryRelease": {
+              "library": "SUPERFAMILY",
+              "version": "1.75"
+            },
+            "entry": {
+              "accession": "IPR023591",
+              "name": "Ribosomal_uS2_flav_dom_sf",
+              "description": "Small ribosomal subunit protein uS2, flavodoxin-like domain superfamily",
+              "type": "Homologous_superfamily",
+              "parent": null
+            }
+          },
+          "model-ac": "0046796",
+          "source": "SUPERFAMILY",
+          "locations": [
+            {
+              "start": 6,
+              "end": 235,
+              "location-fragments": [
+                {
+                  "start": 6,
+                  "end": 235,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmLength": 237,
+              "evalue": 1.96e-96
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "TIGR01011",
+            "name": "rpsB_bact",
+            "description": "30S ribosomal protein S2",
+            "type": "Family",
+            "signatureLibraryRelease": {
+              "library": "NCBIFAM",
+              "version": "20.0"
+            },
+            "entry": {
+              "accession": "IPR005706",
+              "name": "Ribosomal_uS2_bac/mit/plastid",
+              "description": "Small ribosomal subunit protein uS2, bacteria/mitochondria/plastid",
+              "type": "Family",
+              "parent": "IPR001865"
+            }
+          },
+          "model-ac": "TIGR01011",
+          "source": "NCBIFAM",
+          "locations": [
+            {
+              "start": 3,
+              "end": 226,
+              "location-fragments": [
+                {
+                  "start": 3,
+                  "end": 226,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 1,
+              "hmmEnd": 224,
+              "hmmLength": 225,
+              "hmmBounds": "N_TERMINAL_COMPLETE",
+              "envelopeStart": 3,
+              "envelopeEnd": 227,
+              "evalue": 1.2e-104,
+              "score": 360.0
+            }
+          ],
+          "score": 360.2,
+          "evalue": 1e-104
+        },
+        {
+          "signature": {
+            "accession": "MF_00291_B",
+            "name": "Ribosomal_uS2_B",
+            "description": "Small ribosomal subunit protein uS2 [rpsB]",
+            "type": "Family",
+            "signatureLibraryRelease": {
+              "library": "HAMAP",
+              "version": "2026_01"
+            },
+            "entry": {
+              "accession": "IPR005706",
+              "name": "Ribosomal_uS2_bac/mit/plastid",
+              "description": "Small ribosomal subunit protein uS2, bacteria/mitochondria/plastid",
+              "type": "Family",
+              "parent": "IPR001865"
+            }
+          },
+          "model-ac": "MF_00291_B",
+          "source": "HAMAP",
+          "locations": [
+            {
+              "start": 2,
+              "end": 225,
+              "location-fragments": [
+                {
+                  "start": 2,
+                  "end": 225,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 41.417992,
+              "cigarAlignment": "224M"
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "G3DSA:3.40.50.10490",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "CATH-Gene3D",
+              "version": "4.3.0"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 6,
+              "end": 241,
+              "location-fragments": [
+                {
+                  "start": 6,
+                  "end": 103,
+                  "dc-status": "C_TERMINAL_DISC"
+                },
+                {
+                  "start": 151,
+                  "end": 241,
+                  "dc-status": "N_TERMINAL_DISC"
+                }
+              ],
+              "score": 0.9998551
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "G3DSA:1.10.287.610",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "CATH-Gene3D",
+              "version": "4.3.0"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 104,
+              "end": 150,
+              "location-fragments": [
+                {
+                  "start": 104,
+                  "end": 150,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99983686
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "cd01425",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "CDD",
+              "version": "3.21"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 9,
+              "end": 223,
+              "location-fragments": [
+                {
+                  "start": 9,
+                  "end": 223,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9999739
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PS00962",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "PROSITE patterns",
+              "version": "2025_01"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 6,
+              "end": 17,
+              "location-fragments": [
+                {
+                  "start": 6,
+                  "end": 17,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9999491
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PS00963",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "PROSITE patterns",
+              "version": "2025_01"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 158,
+              "end": 182,
+              "location-fragments": [
+                {
+                  "start": 158,
+                  "end": 182,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9999808
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "TIGR01011",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "NCBIFAM",
+              "version": "17.0"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 3,
+              "end": 225,
+              "location-fragments": [
+                {
+                  "start": 3,
+                  "end": 225,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9999712
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "SSF52313",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "SUPERFAMILY",
+              "version": "1.75"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 6,
+              "end": 235,
+              "location-fragments": [
+                {
+                  "start": 6,
+                  "end": 235,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9995807
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PF00318",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "Pfam",
+              "version": "37.3"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 9,
+              "end": 224,
+              "location-fragments": [
+                {
+                  "start": 9,
+                  "end": 224,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99999225
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PR00395",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "PRINTS",
+              "version": "42.0"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 6,
+              "end": 24,
+              "location-fragments": [
+                {
+                  "start": 6,
+                  "end": 24,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99938774
+            },
+            {
+              "start": 37,
+              "end": 46,
+              "location-fragments": [
+                {
+                  "start": 37,
+                  "end": 46,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99990046
+            },
+            {
+              "start": 87,
+              "end": 104,
+              "location-fragments": [
+                {
+                  "start": 87,
+                  "end": 104,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9998205
+            },
+            {
+              "start": 158,
+              "end": 175,
+              "location-fragments": [
+                {
+                  "start": 158,
+                  "end": 175,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9995327
+            },
+            {
+              "start": 175,
+              "end": 186,
+              "location-fragments": [
+                {
+                  "start": 175,
+                  "end": 186,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99995387
+            },
+            {
+              "start": 196,
+              "end": 210,
+              "location-fragments": [
+                {
+                  "start": 196,
+                  "end": 210,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99977386
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PTHR12534",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "PANTHER",
+              "version": "19.0"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 3,
+              "end": 237,
+              "location-fragments": [
+                {
+                  "start": 3,
+                  "end": 237,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9999636
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "MF_00291_B",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "HAMAP",
+              "version": "2025_01"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 2,
+              "end": 225,
+              "location-fragments": [
+                {
+                  "start": 2,
+                  "end": 225,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9999929
+            }
+          ]
+        }
+      ],
+      "found": true
+    },
+    {
+      "md5": "6077C452D1DC6151040B2B179E2294C7",
+      "matches": [
+        {
+          "signature": {
+            "accession": "G3DSA:1.10.490.10",
+            "name": null,
+            "description": "Globins",
+            "type": "Homologous_superfamily",
+            "signatureLibraryRelease": {
+              "library": "CATH-Gene3D",
+              "version": "4.3.0"
+            },
+            "entry": {
+              "accession": "IPR012292",
+              "name": "Globin/Proto",
+              "description": "Globin/Protoglobin",
+              "type": "Homologous_superfamily",
+              "parent": null
+            }
+          },
+          "model-ac": "2zfbA00",
+          "source": "CATH-Gene3D",
+          "locations": [
+            {
+              "start": 2,
+              "end": 142,
+              "location-fragments": [
+                {
+                  "start": 2,
+                  "end": 142,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 2,
+              "hmmEnd": 141,
+              "hmmLength": 141,
+              "hmmBounds": "C_TERMINAL_COMPLETE",
+              "envelopeStart": 2,
+              "envelopeEnd": 142,
+              "evalue": 7.5e-54,
+              "score": 183.7
+            }
+          ],
+          "score": 183.9,
+          "evalue": 6.7e-54
+        },
+        {
+          "signature": {
+            "accession": "PF00042",
+            "name": "Globin",
+            "description": "Globin",
+            "type": "Domain",
+            "signatureLibraryRelease": {
+              "library": "Pfam",
+              "version": "38.2"
+            },
+            "entry": {
+              "accession": "IPR000971",
+              "name": "Globin",
+              "description": "Globin",
+              "type": "Domain",
+              "parent": null
+            }
+          },
+          "model-ac": "PF00042",
+          "source": "Pfam",
+          "locations": [
+            {
+              "start": 27,
+              "end": 137,
+              "location-fragments": [
+                {
+                  "start": 27,
+                  "end": 137,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 1,
+              "hmmEnd": 117,
+              "hmmLength": 117,
+              "hmmBounds": "COMPLETE",
+              "envelopeStart": 27,
+              "envelopeEnd": 137,
+              "evalue": 5.8e-30,
+              "score": 115.6
+            }
+          ],
+          "score": 115.6,
+          "evalue": 5.8e-30
+        },
+        {
+          "signature": {
+            "accession": "PR00612",
+            "name": "ALPHAHAEM",
+            "description": null,
+            "type": "Family",
+            "signatureLibraryRelease": {
+              "library": "PRINTS",
+              "version": "42.0"
+            },
+            "entry": {
+              "accession": "IPR002338",
+              "name": "Hemoglobin_a-typ",
+              "description": "Hemoglobin, alpha-type",
+              "type": "Family",
+              "parent": null
+            }
+          },
+          "model-ac": "PR00612",
+          "source": "PRINTS",
+          "locations": [
+            {
+              "start": 16,
+              "end": 28,
+              "location-fragments": [
+                {
+                  "start": 16,
+                  "end": 28,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 7.09e-09,
+              "pvalue": 63.35,
+              "motifNumber": 1
+            },
+            {
+              "start": 33,
+              "end": 43,
+              "location-fragments": [
+                {
+                  "start": 33,
+                  "end": 43,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 1.46e-07,
+              "pvalue": 78.14,
+              "motifNumber": 2
+            },
+            {
+              "start": 48,
+              "end": 57,
+              "location-fragments": [
+                {
+                  "start": 48,
+                  "end": 57,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 5.01e-07,
+              "pvalue": 81.61,
+              "motifNumber": 3
+            },
+            {
+              "start": 75,
+              "end": 88,
+              "location-fragments": [
+                {
+                  "start": 75,
+                  "end": 88,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 1.08e-08,
+              "pvalue": 74.17,
+              "motifNumber": 4
+            },
+            {
+              "start": 123,
+              "end": 139,
+              "location-fragments": [
+                {
+                  "start": 123,
+                  "end": 139,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 1.49e-11,
+              "pvalue": 77.49,
+              "motifNumber": 5
+            }
+          ],
+          "evalue": 1.1e-34,
+          "graphscan": "IIIII"
+        },
+        {
+          "signature": {
+            "accession": "PR00815",
+            "name": "PIHAEM",
+            "description": null,
+            "type": "Family",
+            "signatureLibraryRelease": {
+              "library": "PRINTS",
+              "version": "42.0"
+            },
+            "entry": {
+              "accession": "IPR002339",
+              "name": "Hemoglobin_pi",
+              "description": "Hemoglobin, pi",
+              "type": "Family",
+              "parent": "IPR002338"
+            }
+          },
+          "model-ac": "PR00815",
+          "source": "PRINTS",
+          "locations": [
+            {
+              "start": 4,
+              "end": 29,
+              "location-fragments": [
+                {
+                  "start": 4,
+                  "end": 29,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 1.28e-05,
+              "pvalue": 34.62,
+              "motifNumber": 1
+            },
+            {
+              "start": 49,
+              "end": 58,
+              "location-fragments": [
+                {
+                  "start": 49,
+                  "end": 58,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.000109,
+              "pvalue": 55.0,
+              "motifNumber": 2
+            },
+            {
+              "start": 73,
+              "end": 83,
+              "location-fragments": [
+                {
+                  "start": 73,
+                  "end": 83,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.00586,
+              "pvalue": 36.36,
+              "motifNumber": 3
+            },
+            {
+              "start": 105,
+              "end": 116,
+              "location-fragments": [
+                {
+                  "start": 105,
+                  "end": 116,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.000983,
+              "pvalue": 41.67,
+              "motifNumber": 4
+            }
+          ],
+          "evalue": 1.1e-08,
+          "graphscan": "IIII"
+        },
+        {
+          "signature": {
+            "accession": "PS01033",
+            "name": "GLOBIN",
+            "description": "Globin domain profile",
+            "type": "Domain",
+            "signatureLibraryRelease": {
+              "library": "PROSITE profiles",
+              "version": "2026_01"
+            },
+            "entry": {
+              "accession": "IPR000971",
+              "name": "Globin",
+              "description": "Globin",
+              "type": "Domain",
+              "parent": null
+            }
+          },
+          "model-ac": "PS01033",
+          "source": "PROSITE profiles",
+          "locations": [
+            {
+              "start": 2,
+              "end": 142,
+              "location-fragments": [
+                {
+                  "start": 2,
+                  "end": 142,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 42.057858,
+              "cigarAlignment": "46M3D27M3D15M1I52M"
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "SSF46458",
+            "name": null,
+            "description": "Globin-like",
+            "type": "Homologous_superfamily",
+            "signatureLibraryRelease": {
+              "library": "SUPERFAMILY",
+              "version": "1.75"
+            },
+            "entry": {
+              "accession": "IPR009050",
+              "name": "Globin-like_sf",
+              "description": "Globin-like superfamily",
+              "type": "Homologous_superfamily",
+              "parent": null
+            }
+          },
+          "model-ac": "0035425",
+          "source": "SUPERFAMILY",
+          "locations": [
+            {
+              "start": 1,
+              "end": 142,
+              "location-fragments": [
+                {
+                  "start": 1,
+                  "end": 142,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmLength": 142,
+              "evalue": 1.36e-49
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "G3DSA:1.10.490.10:FF:000002",
+            "name": null,
+            "description": "Hemoglobin subunit alpha",
+            "type": "Region",
+            "signatureLibraryRelease": {
+              "library": "CATH-FunFam",
+              "version": "4.3.0"
+            },
+            "entry": null
+          },
+          "model-ac": "1.10.490.10-FF-000002",
+          "source": "CATH-FunFam",
+          "locations": [
+            {
+              "start": 2,
+              "end": 142,
+              "location-fragments": [
+                {
+                  "start": 2,
+                  "end": 142,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 1,
+              "hmmEnd": 141,
+              "hmmLength": 141,
+              "hmmBounds": "COMPLETE",
+              "envelopeStart": 2,
+              "envelopeEnd": 142,
+              "evalue": 5.9e-78,
+              "score": 261.5
+            }
+          ],
+          "score": 261.7,
+          "evalue": 5.1e-78
+        },
+        {
+          "signature": {
+            "accession": "cd08927",
+            "name": "Hb-alpha-like",
+            "description": "Hemoglobin alpha, zeta, mu, theta, and related Hb subunits",
+            "type": "Domain",
+            "signatureLibraryRelease": {
+              "library": "CDD",
+              "version": "3.21"
+            },
+            "entry": {
+              "accession": "IPR002338",
+              "name": "Hemoglobin_a-typ",
+              "description": "Hemoglobin, alpha-type",
+              "type": "Family",
+              "parent": null
+            }
+          },
+          "model-ac": "cd08927",
+          "source": "CDD",
+          "locations": [
+            {
+              "start": 3,
+              "end": 142,
+              "location-fragments": [
+                {
+                  "start": 3,
+                  "end": 142,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "evalue": 2.31688e-85,
+              "score": 244.016,
+              "sites": [
+                {
+                  "description": "heme binding site",
+                  "numLocations": 13,
+                  "siteLocations": [
+                    {
+                      "start": 62,
+                      "end": 62,
+                      "residue": "K"
+                    },
+                    {
+                      "start": 33,
+                      "end": 33,
+                      "residue": "M"
+                    },
+                    {
+                      "start": 43,
+                      "end": 43,
+                      "residue": "Y"
+                    },
+                    {
+                      "start": 44,
+                      "end": 44,
+                      "residue": "F"
+                    },
+                    {
+                      "start": 59,
+                      "end": 59,
+                      "residue": "H"
+                    },
+                    {
+                      "start": 63,
+                      "end": 63,
+                      "residue": "V"
+                    },
+                    {
+                      "start": 66,
+                      "end": 66,
+                      "residue": "A"
+                    },
+                    {
+                      "start": 84,
+                      "end": 84,
+                      "residue": "L"
+                    },
+                    {
+                      "start": 88,
+                      "end": 88,
+                      "residue": "H"
+                    },
+                    {
+                      "start": 98,
+                      "end": 98,
+                      "residue": "N"
+                    },
+                    {
+                      "start": 99,
+                      "end": 99,
+                      "residue": "F"
+                    },
+                    {
+                      "start": 102,
+                      "end": 102,
+                      "residue": "L"
+                    },
+                    {
+                      "start": 137,
+                      "end": 137,
+                      "residue": "L"
+                    }
+                  ]
+                },
+                {
+                  "description": "tetramer interface",
+                  "numLocations": 20,
+                  "siteLocations": [
+                    {
+                      "start": 32,
+                      "end": 32,
+                      "residue": "R"
+                    },
+                    {
+                      "start": 35,
+                      "end": 35,
+                      "residue": "L"
+                    },
+                    {
+                      "start": 36,
+                      "end": 36,
+                      "residue": "S"
+                    },
+                    {
+                      "start": 42,
+                      "end": 42,
+                      "residue": "T"
+                    },
+                    {
+                      "start": 43,
+                      "end": 43,
+                      "residue": "Y"
+                    },
+                    {
+                      "start": 93,
+                      "end": 93,
+                      "residue": "R"
+                    },
+                    {
+                      "start": 95,
+                      "end": 95,
+                      "residue": "D"
+                    },
+                    {
+                      "start": 96,
+                      "end": 96,
+                      "residue": "P"
+                    },
+                    {
+                      "start": 104,
+                      "end": 104,
+                      "residue": "H"
+                    },
+                    {
+                      "start": 108,
+                      "end": 108,
+                      "residue": "V"
+                    },
+                    {
+                      "start": 111,
+                      "end": 111,
+                      "residue": "A"
+                    },
+                    {
+                      "start": 112,
+                      "end": 112,
+                      "residue": "A"
+                    },
+                    {
+                      "start": 118,
+                      "end": 118,
+                      "residue": "F"
+                    },
+                    {
+                      "start": 119,
+                      "end": 119,
+                      "residue": "T"
+                    },
+                    {
+                      "start": 120,
+                      "end": 120,
+                      "residue": "P"
+                    },
+                    {
+                      "start": 123,
+                      "end": 123,
+                      "residue": "H"
+                    },
+                    {
+                      "start": 124,
+                      "end": 124,
+                      "residue": "A"
+                    },
+                    {
+                      "start": 127,
+                      "end": 127,
+                      "residue": "D"
+                    },
+                    {
+                      "start": 141,
+                      "end": 141,
+                      "residue": "Y"
+                    },
+                    {
+                      "start": 142,
+                      "end": 142,
+                      "residue": "R"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PTHR11442",
+            "name": null,
+            "description": "HEMOGLOBIN FAMILY MEMBER",
+            "type": "Family",
+            "signatureLibraryRelease": {
+              "library": "PANTHER",
+              "version": "19.0"
+            },
+            "entry": {
+              "accession": "IPR050056",
+              "name": "Hemoglobin_oxygen_transport",
+              "description": "Hemoglobin and related oxygen transporters",
+              "type": "Family",
+              "parent": null
+            }
+          },
+          "model-ac": "PTHR11442:SF48",
+          "source": "PANTHER",
+          "locations": [
+            {
+              "start": 1,
+              "end": 142,
+              "location-fragments": [
+                {
+                  "start": 1,
+                  "end": 142,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 1,
+              "hmmEnd": 141,
+              "hmmLength": 141,
+              "hmmBounds": "COMPLETE",
+              "envelopeStart": 1,
+              "envelopeEnd": 142,
+              "evalue": 8e-66,
+              "score": 232.0
+            }
+          ],
+          "score": 232.0,
+          "evalue": 8e-66,
+          "ancestralNode": "AN149"
+        },
+        {
+          "signature": {
+            "accession": "PIRSR036517-1",
+            "name": "PIRSR036517-1",
+            "description": null,
+            "type": "Region",
+            "signatureLibraryRelease": {
+              "library": "PIRSR",
+              "version": "2025_05"
+            },
+            "entry": null
+          },
+          "model-ac": "PIRSR036517-1",
+          "source": "PIRSR",
+          "locations": [
+            {
+              "start": 5,
+              "end": 118,
+              "location-fragments": [
+                {
+                  "start": 5,
+                  "end": 118,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "hmmStart": 7,
+              "hmmEnd": 126,
+              "hmmLength": 145,
+              "hmmBounds": "INCOMPLETE",
+              "envelopeStart": 2,
+              "envelopeEnd": 135,
+              "evalue": 3.5e-06,
+              "score": 25.5,
+              "sites": [
+                {
+                  "description": "METAL: Iron (heme b proximal ligand)",
+                  "numLocations": 1,
+                  "siteLocations": [
+                    {
+                      "start": 88,
+                      "end": 88,
+                      "residue": "H"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "score": 25.5,
+          "evalue": 3.5e-06
+        },
+        {
+          "signature": {
+            "accession": "PR00612",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "PRINTS",
+              "version": "42.0"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 16,
+              "end": 28,
+              "location-fragments": [
+                {
+                  "start": 16,
+                  "end": 28,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9986323
+            },
+            {
+              "start": 33,
+              "end": 43,
+              "location-fragments": [
+                {
+                  "start": 33,
+                  "end": 43,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9996198
+            },
+            {
+              "start": 48,
+              "end": 57,
+              "location-fragments": [
+                {
+                  "start": 48,
+                  "end": 57,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9997471
+            },
+            {
+              "start": 75,
+              "end": 88,
+              "location-fragments": [
+                {
+                  "start": 75,
+                  "end": 88,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99955916
+            },
+            {
+              "start": 123,
+              "end": 139,
+              "location-fragments": [
+                {
+                  "start": 123,
+                  "end": 139,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99973476
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PTHR11442",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "PANTHER",
+              "version": "19.0"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 1,
+              "end": 142,
+              "location-fragments": [
+                {
+                  "start": 1,
+                  "end": 142,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9999479
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PR00815",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "PRINTS",
+              "version": "42.0"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 4,
+              "end": 29,
+              "location-fragments": [
+                {
+                  "start": 4,
+                  "end": 29,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9984299
+            },
+            {
+              "start": 49,
+              "end": 58,
+              "location-fragments": [
+                {
+                  "start": 49,
+                  "end": 58,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99713475
+            },
+            {
+              "start": 73,
+              "end": 83,
+              "location-fragments": [
+                {
+                  "start": 73,
+                  "end": 83,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99758554
+            },
+            {
+              "start": 105,
+              "end": 116,
+              "location-fragments": [
+                {
+                  "start": 105,
+                  "end": 116,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.98808086
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PS01033",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "PROSITE Profiles",
+              "version": "2025_01"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 2,
+              "end": 142,
+              "location-fragments": [
+                {
+                  "start": 2,
+                  "end": 142,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99997276
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "cd08927",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "CDD",
+              "version": "3.21"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 3,
+              "end": 142,
+              "location-fragments": [
+                {
+                  "start": 3,
+                  "end": 142,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9998528
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "SSF46458",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "SUPERFAMILY",
+              "version": "1.75"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 1,
+              "end": 142,
+              "location-fragments": [
+                {
+                  "start": 1,
+                  "end": 142,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.99976486
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "PF00042",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "Pfam",
+              "version": "37.3"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 27,
+              "end": 137,
+              "location-fragments": [
+                {
+                  "start": 27,
+                  "end": 137,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9999231
+            }
+          ]
+        },
+        {
+          "signature": {
+            "accession": "G3DSA:1.10.490.10",
+            "name": null,
+            "description": null,
+            "type": null,
+            "signatureLibraryRelease": {
+              "library": "CATH-Gene3D",
+              "version": "4.3.0"
+            },
+            "entry": null
+          },
+          "model-ac": null,
+          "source": "InterPro-N",
+          "locations": [
+            {
+              "start": 2,
+              "end": 142,
+              "location-fragments": [
+                {
+                  "start": 2,
+                  "end": 142,
+                  "dc-status": "CONTINUOUS"
+                }
+              ],
+              "score": 0.9998758
+            }
+          ]
+        }
+      ],
+      "found": true
+    }
+  ]
+}

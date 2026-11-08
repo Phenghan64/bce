@@ -1,0 +1,12 @@
+name: autodock
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - meeko
+  - rdkit
+  - scipy
+  - gemmi
+  - pip
+  # ProDy 2.4.x still imports pkg_resources.
+  - setuptools<81

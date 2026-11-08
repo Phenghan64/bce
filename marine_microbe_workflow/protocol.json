@@ -1,0 +1,40 @@
+{
+  "workflow": "marine_microbe_protease_discovery",
+  "sample": {
+    "organism": "Alteromonas macleodii",
+    "strain": "SSi026",
+    "biosample": "SAMN47740168",
+    "ena_run": "SRR32944547",
+    "isolation": "Sargassum ilicifolium seaweed, Singapore: St John's Island wharf",
+    "collection_date": "2022-08-02"
+  },
+  "reference": {
+    "assembly": "GCF_049379645.1",
+    "assembly_name": "ASM4937964v1",
+    "contigs": 23,
+    "length_bp": 4709881
+  },
+  "stages": [
+    "download_and_checksum",
+    "fastp_paired_end_qc",
+    "spades_isolate_assembly",
+    "assembly_reference_audit",
+    "bakta_annotation",
+    "blastp_protein_evidence",
+    "interpro_matches_and_workflow_evidence",
+    "openfold3_candidate_structure",
+    "known_target_and_non_target_controls",
+    "batch_and_failure_recovery"
+  ],
+  "candidate_rule": {
+    "discovery": "Bakta product terms containing protease/peptidase/aminopeptidase/metalloprotease/endopeptidase/serine hydrolase, then BLASTP homology evidence",
+    "audit_target_terms": ["protease", "peptidase", "aminopeptidase", "metalloprotease", "metallopeptidase", "endopeptidase"],
+    "audit_exclusions": ["prepilin peptidase", "signal peptide peptidase", "peptidoglycan", "transpeptidase", "ATP-dependent Clp protease ATP-binding"],
+    "blast_cutoff": {"identity_percent": 80, "query_coverage_percent": 80, "evalue": 1e-20}
+  },
+  "limitations": [
+    "A reference annotation match is sequence/function evidence, not biochemical activity proof.",
+    "InterPro Matches API is precomputed evidence; local full member scanning requires Linux containers and the complete databases.",
+    "OpenFold3 structure confidence does not establish catalytic activity or substrate specificity."
+  ]
+}

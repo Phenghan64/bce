@@ -1,0 +1,15 @@
+{
+  "docking": {
+    "meeko": "0.8.0",
+    "rdkit": "2026.9.1",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "gemmi": "0.7.5",
+    "vina": "AutoDock Vina v1.2.7"
+  },
+  "preparation": {
+    "pdbfixer": "1.12.0",
+    "openmm": "8.6.1",
+    "numpy": "2.4.6"
+  }
+}

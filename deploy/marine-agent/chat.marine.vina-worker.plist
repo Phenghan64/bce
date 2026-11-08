@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>chat.marine.vina-worker</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PYTHONPATH</key><string>/Users/yili/Documents/ChatGPT/autodock</string>
+    <key>VINA_BINARY</key><string>/Users/yili/.marine-agent/runtime/.tools/bin/vina</string>
+    <key>VINA_CPU_BUDGET</key><string>12</string>
+    <key>VINA_BATCH_WORKERS</key><string>8</string>
+    <key>VINA_CALLBACK_URL</key><string>http://100.64.0.1:8098</string>
+    <key>VINA_CALLBACK_TOKEN</key><string>replace-with-vina-worker-secret</string>
+  </dict>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/yili/.marine-agent/runtime/.env/bin/python3.11</string>
+    <string>/Users/yili/Documents/ChatGPT/autodock/marine_agent/vina_worker.py</string>
+    <string>--host</string><string>100.64.0.22</string>
+    <string>--port</string><string>8100</string>
+    <string>--token-file</string><string>/Users/yili/.config/marine-agent/vina-worker-token</string>
+  </array>
+  <key>WorkingDirectory</key><string>/Users/yili/Documents/ChatGPT/autodock</string>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>10</integer>
+  <key>ProcessType</key><string>Interactive</string>
+  <key>StandardOutPath</key><string>/Users/yili/.marine-agent/vina-worker-launch.log</string>
+  <key>StandardErrorPath</key><string>/Users/yili/.marine-agent/vina-worker-launch-error.log</string>
+</dict>
+</plist>

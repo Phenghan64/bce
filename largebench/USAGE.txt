@@ -1,0 +1,36 @@
+Two-large-receptor Vina performance benchmark
+
+Outputs: results/large-receptors/
+Actual selected-chain residues: albumin 2BXD A = 578; mTOR 4JSX B = 1058.
+All observed residues are retained. mTOR has two missing internal loops; chains A/B/C in the exported file are segments of the original author chain B, not three protein copies.
+The 10 shared unlabelled ligands are selected before docking by rotor count (0–9), with largest heavy-atom count in each category. Files are reused from the existing frozen NCI library; selection never consults old docking scores.
+Each target: 30 panel jobs (10 ligands x 3 seeds), plus 3 independent crystal-ligand pose controls. E32, workers=3, cpu=2, local 30 Angstrom box. Targets run sequentially.
+
+Source download URLs:
+https://files.rcsb.org/download/2BXD.cif
+https://files.rcsb.org/download/4JSX.cif
+https://files.rcsb.org/ligands/download/RWF.cif
+https://files.rcsb.org/ligands/download/17G.cif
+
+Fresh preparation sequence (use a new output location/version to preserve these measurements):
+1. openfold3/run.sh python largebench/export.py
+2. run.sh python largebench/prepare.py
+3. OPENMM_CPU_THREADS=2 .tools/prep-env/bin/python largebench/protonate.py <target>/receptor
+4. OPENMM_CPU_THREADS=2 .tools/prep-env/bin/python largebench/relax_added.py <target>/receptor
+5. run.sh python largebench/convert.py <target>/receptor
+6. openfold3/run.sh python largebench/monitor.py <target>
+
+The runner uses input hashes, output validation and a lock. To resume without overwriting original resource records:
+./run.sh python largebench/run.py --output-dir results/large-receptors/albumin
+./run.sh python largebench/run.py --output-dir results/large-receptors/mtor
+The inherited --stage option is not used to select stages in this benchmark: it always handles both controls and panel. Failed controls are reported without preventing a hardware benchmark; failed panel jobs result in nonzero exit status.
+
+Final independent audits/report:
+./run.sh python largebench/audit_receptors.py
+./run.sh python largebench/report.py
+./run.sh python largebench/plot.py
+audit_receptors.py creates coordinate-audit.json and pocket-repairs.json. It explicitly allows only terminal carboxylate O/OXT label swaps during template assignment; all experimental heavy atom positions must be preserved.
+
+Interpretation:
+Not an OpenFold3 run; no predicted-protein confidence claim. No flexible receptor or whole-protein blind search. Source ligand microstates are retained, not a pH/tautomer ensemble. Redocking assesses only these pose controls, not prospective screening accuracy. The panel contains no activity labels.
+Memory is process-tree RSS sum (shared pages may be counted twice). System available memory, CPU and swap include other apps. No direct temperature measurements. Preparation timing excludes source download, failed attempts, development and analysis.

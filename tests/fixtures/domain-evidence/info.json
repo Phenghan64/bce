@@ -1,0 +1,95 @@
+{
+  "api": "0.6.0",
+  "release": "110.0",
+  "release_date": "2026-09-03",
+  "analyses": [
+    {
+      "name": "NCBIFAM",
+      "version": "20.0"
+    },
+    {
+      "name": "AntiFam",
+      "version": "8.0"
+    },
+    {
+      "name": "CATH-FunFam",
+      "version": "4.3.0"
+    },
+    {
+      "name": "SFLD",
+      "version": "4"
+    },
+    {
+      "name": "HAMAP",
+      "version": "2026_01"
+    },
+    {
+      "name": "Phobius",
+      "version": "1.01"
+    },
+    {
+      "name": "PIRSF",
+      "version": "3.10"
+    },
+    {
+      "name": "SMART",
+      "version": "9.0"
+    },
+    {
+      "name": "PROSITE patterns",
+      "version": "2026_01"
+    },
+    {
+      "name": "SUPERFAMILY",
+      "version": "1.75"
+    },
+    {
+      "name": "CATH-Gene3D",
+      "version": "4.3.0"
+    },
+    {
+      "name": "PIRSR",
+      "version": "2025_05"
+    },
+    {
+      "name": "PROSITE profiles",
+      "version": "2026_01"
+    },
+    {
+      "name": "InterPro-N",
+      "version": "105.0"
+    },
+    {
+      "name": "PANTHER",
+      "version": "19.0"
+    },
+    {
+      "name": "SignalP",
+      "version": "6.0i"
+    },
+    {
+      "name": "CDD",
+      "version": "3.21"
+    },
+    {
+      "name": "TMbed",
+      "version": "1.0.2"
+    },
+    {
+      "name": "PRINTS",
+      "version": "42.0"
+    },
+    {
+      "name": "COILS",
+      "version": "2.2.1"
+    },
+    {
+      "name": "MobiDB-lite",
+      "version": "4.0"
+    },
+    {
+      "name": "Pfam",
+      "version": "38.2"
+    }
+  ]
+}

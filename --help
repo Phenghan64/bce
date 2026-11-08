@@ -1,0 +1,25 @@
+{
+  "cli_completed": false,
+  "error": "NoArgsIsHelpError: Usage: benchmark.py [OPTIONS] COMMAND [ARGS]...\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  align-msa-server  Generate ColabFold alignments without running model...\n  predict           Perform inference on a set of queries defined in the...\n  train             Perform a training experiment with a preprepared...",
+  "elapsed_seconds": 0.35,
+  "timing_scope": "CLI import and execution; excludes Python/PyTorch startup and prior MSA/download stages",
+  "openfold3_version": "0.5.0",
+  "torch_version": "2.12.1",
+  "mps_available": true,
+  "mps_memory_fraction": 0.7,
+  "mps_recommended_max_bytes": 12713115648,
+  "process_peak_rss_bytes": 250773504,
+  "sampled_peak_mps_driver_bytes": 458752,
+  "system_swap_before_bytes": 180027392,
+  "system_swap_after_bytes": 180027392,
+  "memory_note": "RSS and MPS driver allocations overlap on unified memory; system swap includes all apps",
+  "samples": [
+    {
+      "seconds": 0.0,
+      "process_rss_bytes": 225492992,
+      "mps_tensor_bytes": 0,
+      "mps_driver_bytes": 458752,
+      "system_swap_used_bytes": 180027392
+    }
+  ]
+}

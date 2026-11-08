@@ -1,0 +1,313 @@
+EYOSON 科研智能体交接记录
+状态核对时间：2026-11-08 13:07–13:11，中国标准时间（Asia/Shanghai）
+
+本文描述当前事实、代码、部署及验证证据，不包含后续实施方案。
+用户已要求暂停后续工作，交由本机另一个 Codex 接替。本轮未发布新版前后端。
+
+一、项目与本轮范围
+
+系统现有架构是 Deep Agents＋MiniMax，保留 OpenFold3、Vina、蛋白筛选和科研证据管理能力。OpenFold3、Vina 的计算执行位置仍为 Mac；本轮增加的是 Linux InterProScan 6 完整扫描执行节点。
+
+后端工作目录：/Users/yili/Documents/ChatGPT/autodock
+智能体前端目录：/Users/yili/Documents/dsh/doho
+首页项目：/Users/yili/Documents/dsh/haiyang，由另一个 Codex 负责。
+本轮修改范围不包括首页根目录、首页部署、域名、SSL。线上智能体入口仍为 https://bce.dohoo.chat/marine-agent/。
+
+本轮解决的问题：原有 InterPro 查询主要使用预计算记录，对未知、新设计或突变序列可能无记录；现增加真正的 InterProScan 完整扫描，支持异步进度、取消、同输入恢复、原始产物校验及 Agent 调用。
+“查不到预计算记录”“完整扫描无命中”“科学上不存在某功能”是不同状态，代码对它们作区分。
+没有更换 Agent 框架，也没有通过省略默认分析库来适配硬件。
+
+二、交接时的总体状态
+
+1. Ubuntu 完整扫描 Worker 已安装、启用开机启动并运行。
+2. 官方默认可用的 18 项分析所需数据库和镜像安装完成。
+3. 7 条序列真实完整扫描、取消、恢复、实际生物分析步骤缓存复用已通过。
+4. 真实 Deep Agents＋MiniMax 的扫描、来源追问、活性边界追问、普通问候已通过；另有一次协调器恢复和只读追问验证通过。
+5. 新版后端镜像已构建，前端已构建并上传暂存目录；两者均未切换到生产。
+6. 生产仍运行旧版，原有数据库未替换。核对时生产和 InterPro Worker 都没有正在运行的科研计算任务。
+7. 新版前端的线上浏览器验收尚未进行。本轮只有旧版页面可访问的预检，不能算新版 UI 验收。
+8. 没有进行本轮代码的 Git commit 或 push。
+
+三、线上与暂存部署
+
+SSH 配置文件：/Users/yili/.ssh/lebb_collab.conf
+现有主机别名：lebb-node-1、lebb-node-13、lebb-ubuntu。
+
+生产后端（lebb-node-1，100.64.0.1）：
+  API：http://100.64.0.1:8098
+  systemd 服务：marine-agent
+  Docker 容器：marine-agent-api
+  当前镜像：marine-agent:20261108-claim-evidence-v6
+  主机项目目录：/opt/marine-agent/app
+  生产数据库：/opt/marine-agent/app/results/marine-agent-api/state.sqlite3
+  私有配置：/etc/marine-agent.env
+  当前覆盖配置：/etc/systemd/system/marine-agent.service.d/99-zzz-claim-evidence.conf
+  前一版本备份目录：/opt/marine-agent/backups/claim-evidence-20261108-v6/
+  交接时记录数：179 runs、137 conversations、2 research_projects、1 protein_candidate、4 experimental_measurements。
+  交接时 queued/running/cancelling 的生产 run 数为 0。
+
+新版后端暂存：
+  镜像：marine-agent:20261108-interpro-fullscan-v1
+  目录：/opt/marine-agent/backups/interpro-fullscan-20261108/
+  incoming/、files.json、Dockerfile、source.tar.gz 为暂存代码和指纹。
+  本机 backend-files.json 的 8 个文件哈希与当前本机代码一致。
+  最后一次镜像构建记录：本机工件目录中的 stage-backend-final.log。
+  镜像内 API 导入检查通过，路由数量为 42。
+  published.json 不存在，尚未发布。
+  发布脚本所需 actual-scan-receipt.json、actual-cancellation.json 在该暂存目录中尚不存在；原始验收结果实际位于 Ubuntu 节点。
+
+生产前端（lebb-node-13，ubuntu 用户）：
+  目录：/var/www/bce.dohoo.chat/current/marine-agent
+  当前版本收据：/var/www/bce.dohoo.chat/marine-agent-releases/20261108-claim-evidence-v1/published.json
+  当前 index.html 哈希仍与该旧版收据相符。
+  新版暂存：/var/www/bce.dohoo.chat/marine-agent-releases/20261108-interpro-fullscan-v1
+  新版 published.json 不存在。
+  网站 current 指向 /var/www/bce.dohoo.chat/releases/20261030-vina-wizard。
+  前端 API 前缀为 /doho/research-api。
+
+前端构建使用的环境：
+  Node 路径：/Users/yili/Library/Application Support/BridgeDevTools/2026-10-14/node/bin
+  VITE_BASE_PATH=/marine-agent/
+  VITE_MARINE_MODE=true
+  VITE_MARINE_AGENT_API_BASE=/doho/research-api
+  本机输出目录：/Users/yili/Documents/dsh/doho/dist-interpro-fullscan-20261108
+
+四、Ubuntu InterProScan 节点
+
+主机：lebb-ubuntu，100.64.0.15，用户 qwer。
+硬件：Intel i5-8250U，8 个逻辑 CPU，约 18.9 GiB 内存，8 GiB swap；共享节点，另有 Kubernetes、ClickHouse 等工作负载。
+/mnt/data 是约 1 TB 的 TOSHIBA MQ04ABF100 机械硬盘；系统盘是约 128 GB SSD。
+安装期间采样可用内存约 8–9 GB，并非独占计算节点。
+
+根目录：/mnt/data/eyoson-interproscan6/
+版本目录：releases/6.0.3.0-110.0/
+  release.json：完整安装后的版本、分析范围、数据库元数据、镜像身份及源文件校验信息。
+  databases/：解压后的数据库。
+  archives/、archives.json：14 个压缩数据库及校验信息，压缩总量约 6.4 GB。
+  interproscan6-6.0.3.0/：官方工作流源码。
+运行时：runtime/java/、runtime/nextflow、runtime/nxf/。
+版本：InterProScan 6.0.3.0、InterPro 110.0、Nextflow 26.10.3、Temurin JRE 21.0.13。
+compatibility-proof.json 保存官方版本兼容信息；image-manifest.json 保存 12 个 Docker 镜像的身份。
+
+18 项默认分析：
+antifam、cathgene3d、cathfunfam、cdd、coils、hamap、mobidblite、ncbifam、panther、pfam、pirsf、pirsr、prints、prositepatterns、prositeprofiles、sfld、smart、superfamily。
+可选授权与 ML 分析未配置；本轮“完整”指官方默认可用分析全集，不包括这些可选项。
+
+Worker：
+  代码：/mnt/data/eyoson-interproscan6/worker/marine_agent/
+  服务：/etc/systemd/system/eyoson-interproscan.service
+  地址：http://100.64.0.15:8110
+  私有环境：/mnt/data/eyoson-interproscan6/worker.private.env
+  鉴权头：X-InterPro-Worker-Token
+  状态：jobs/<job_id>/state.json
+  科学产物与缓存：analyses/<analysis_id>/
+  服务已 enabled；交接时 active。
+  当前一次只调度一个 Nextflow 工作流；INTERPRO_TASK_CPUS=2、INTERPRO_MAX_WORKERS=2。
+  Nextflow 配置 executor.cpus=2、executor.memory='18 GB'、process.maxForks=2；这是当前调度配置，不是吞吐极限结论。
+  保留官方任务内存标签，没有为硬件削减分析范围。
+
+五、代码改动
+
+以下后端路径均相对于 /Users/yili/Documents/ChatGPT/autodock/。
+
+新增 marine_agent/interpro_protocol.py：
+  无第三方依赖的协议校验。校验输入 ID、序列、输出版本、序列 MD5、所有 xref、无命中记录完整性和成员库身份。
+  相同序列对应多个 ID 时，所有 ID 都必须在输出中保留。
+  active_library_versions 仅向业务报告暴露实际启用分析的版本，避免把元数据中的可选库误写成执行范围。
+
+新增 marine_agent/interpro_worker.py：
+  Linux 异步 HTTP Worker，持久化 job/analysis，幂等提交，单工作流队列。
+  执行官方 Nextflow，显式 --no-matches-api；镜像 ID 与固定 release 校验。
+  保留 JSON、TSV、trace、日志、command 和 receipt。
+  取消记录可以拒绝迟到提交；进程组与带 eyoson.interpro.job 标签的 Docker 容器一起清理。
+  重启时旧任务标为停止，并清理本 Worker 所属容器；不把中断任务自动当作成功。
+  同输入新 attempt 使用 -resume；refresh 明确关闭复用。
+  相同 FASTA 不再重写，保留 mtime，使 Nextflow 文件缓存可复用。
+  Nextflow 子进程环境移除 Worker token。
+  支持 --cleanup-only，供 systemd ExecStopPost 使用。
+
+新增 marine_agent/interpro_remote.py：
+  业务端 full_scan 适配器；验证健康状态、release 指纹、每个产物哈希和实际执行命令。
+  镜像产物保存在业务 results/protein-domains/<analysis_id>/。
+  保存 manifest、attempt、输入、Worker 信息、扫描 receipt 和报告。
+  发出真实进度事件；缓存复用与本次实际计算有不同字段。
+  RemoteScanStopPending 表示停止尚未得到远端确认，不能提前显示已停止。
+
+修改 marine_agent/domain_evidence.py：
+  DomainRequest.method 为 lookup/full_scan，默认仍是 lookup；按方法分发并校验不同产物。
+
+修改 marine_agent/protein_tools.py：
+  在既有 annotate_protein_domains 工具上暴露 method；没有另起一套并行 Agent 工具体系。
+
+修改 marine_agent/task_lifecycle.py：
+  保存输入的完整扫描继续执行、部分结果恢复；已完成操作不重复执行。
+  配置完整扫描 Worker 后，预计算未知记录的继续流程可转入 full_scan。
+
+修改 marine_agent/restart_recovery.py：
+  将 InterPro 纳入远端停止确认。
+  使用持久化科学操作判断实际涉及的 Worker；multiple 汇总不再无条件扩展到所有 Worker。
+  修复已知 InterPro 操作恢复时因无关 OpenFold/Vina 节点而长期 recovery_pending 的情况。
+
+修改 marine_agent/api.py：
+  支持字典式扫描进度事件，处理取消与恢复；未确认的远端停止保持 pending。
+  full_scan 的初始阶段为 domain_scan，lookup 仍为 domain_lookup。
+
+修改 marine_agent/evidence_review.py：
+  区分完整扫描、完整扫描缓存和预计算查询；来源解释及活性边界使用真实报告。
+
+前端改动：
+  /Users/yili/Documents/dsh/doho/src/services/agentExecution.ts
+  将 interpro_scan:<analysis_id> 进度压缩为持续更新的一行；不同 analysis 保持分开。
+  展示等待、已完成步骤数、复用步骤数和 recovery_pending。
+  没有改页面布局，没有添加大段说明文字。
+  相应测试位于 /Users/yili/Documents/dsh/doho/tests/agent-execution.test.ts。
+
+后端测试重点文件：tests/test_interpro_fullscan.py；相关恢复、生命周期及证据测试也有回归记录。
+本机 Python 环境是 .env/bin/python3.11，使用 unittest；该环境没有 pytest。
+本轮没有修改 AGENTS.md。系统 Git/Python 曾有 Xcode license 阻挡；没有接受该协议。
+
+六、真实扫描结果
+
+验收目录（Ubuntu）：/mnt/data/eyoson-interproscan6/acceptance-20261108/
+主要文件：health.json、identifiers.json、cancellation.json、final-state.json、receipt.json、scan.json、scan.tsv、trace.tsv、console.log、nextflow.log、command.json、resources.jsonl、http-contract.json、node-profile.json。
+
+7 条序列，共 3329 残基，最终输出 82 个成员库匹配：
+  Q56696：816 aa，Vibrio parahaemolyticus microbial collagenase，9 匹配。
+    Pfam：PF01752、PF04151、PF08453。
+  Q00971：609 aa，Vibrio proteolyticus neutral protease，17 匹配。
+    Pfam：PF01447、PF02868、PF03413、PF04151、PF07504。
+  Q9KNQ6：185 aa，Vibrio cholerae HslV，12 匹配。
+    Pfam：PF00227。
+  A5F546：274 aa，Vibrio cholerae ribosomal uL2，18 匹配。
+    Pfam：PF00181、PF03947。
+  Q56696_H10A_synthetic：816 aa，人工接口测试变体，9 匹配，与亲本 Pfam 集合相同。
+  Q00971_W10A_synthetic：609 aa，人工接口测试变体，17 匹配，与亲本 Pfam 集合相同。
+  short_synthetic_nohit_control：20 aa，人工序列，0 匹配，仍完整保留在输出中。
+
+4 条天然序列的上述 Pfam 集合均与本轮获取的 UniProt 参考注释相符。
+两条人工变体的 MD5 在扫描前实际查询预计算记录均为 found=false；完整扫描仍成功产出结果。
+人工变体不是天然样本，也不是经过实验验证的突变体；20 aa 对照不是生物学阴性。
+这是注释一致性与工程验证，不是独立酶活基准，不足以推算敏感度、特异度或企业筛选准确率。
+部分天然 accession 曾在先前较大数据集出现；本轮结果是真实新计算，但不是全新独立盲测集。
+
+实际取消与恢复：
+  analysis_id：e0e7201f873deec4000535bfca14a16ef83dc50f5f330a938d092ffa74671806
+  取消 job：dfbc84f3c7c249e9a3122b85971aa221
+  恢复 job：fbe7ca985190497aaae7c3c667b38788
+  第一次约 223.7 秒后，在已确认 COILS 生物分析完成的条件下取消。
+  取消确认结果：stopped、active=false、所属 Docker 容器剩余 0。
+  恢复最终：41 个新完成进程、9 个缓存进程、0 个失败进程。
+  实际生物分析缓存包含 PIRSR、NCBIFAM、SMART 预筛、COILS、SFLD，非仅输入准备步骤。
+  receipt exit_code=0，de_novo_scan_executed=true。
+
+耗时口径：
+  Worker elapsed_seconds 从进入 _run 时计时，包含队列等待，不是纯计算时间。
+  恢复 attempt 总耗时约 1765.1 秒，其中排队约 945.2 秒，取得执行槽之后约 819.9 秒。
+  中间由同一队列中的 Agent 验收任务占用执行槽，因此不能把 1765 秒当作该 7 条序列的纯计算耗时。
+  resources.jsonl 有 517 次采样；尚未完成独立性能汇总报告。
+  容器采样内存、进程 peak RSS、宿主机可用内存是不同口径，当前没有可宣称的整机精确内存峰值。
+
+七、真实 Agent 验证
+
+使用既有模型配置和实际 Deep Agents 调用，运行于隔离 Docker 与独立数据库，未写入生产会话数据库。
+隔离目录（node1）：/opt/marine-agent/backups/interpro-fullscan-20261108/agent-results/
+隔离数据库：该目录下 marine-agent-api/state.sqlite3。
+证据目录：该目录下 interpro-agent-eval/。
+本机已有副本：results/interpro-fullscan-20261108/agent-evidence/。
+
+真实请求输入 Q9KNQ6＋人工 20 aa 对照，明确要求完整扫描、不开结构预测和对接。
+验证了工具 method=full_scan、输入 ID 与序列逐条一致、真实进度事件和成功产物。
+结果 Q9KNQ6 命中 PF00227（2–169，E-value 7.1e-21）；对照零匹配。
+
+summary.json 的 4 项结果：
+  full_scan：succeeded，1180.195 秒。
+    run_id：522df022-1682-4d35-abc1-3a754bcc9cd5
+    analysis_id：773c35c64613b5643600b14e91551adb03d097860b41d5cee32753d8cd950a11
+    Worker：51 个完成进程，0 缓存，0 失败。
+    Worker 总耗时 1151.255 秒，含约 205.8 秒排队，取得执行槽后约 945.5 秒。
+  provenance：succeeded，9.599 秒，未启动新的科学计算。
+  activity：succeeded，2.336 秒，没有把家族匹配说成胶原蛋白酶活性已确认。
+  greeting：succeeded，3.915 秒，普通问候没有触发计算流程。
+
+额外 final-checks.json：
+  协调器启动恢复实际验证通过：旧中断 run d7f10158-7bfc-4d4e-85ce-b80bc06562c3 最终为 stopped。
+  新一次只读来源追问通过，没有新增科学操作。
+  证据为 actual-coordinator-recovery.json、final-provenance.json、final-checks.json。
+
+验证过程中观察到的报告问题：
+  最初的版本追问将 release 元数据中的可选分析版本也列入回答，虽然另列了实际 18 项分析，仍可能造成歧义。
+  当前代码已通过 active_library_versions 缩小报告字段到实际启用分析，并在最新真实追问中明确纠正多列的可选项。
+  Agent 自由文本仍比较冗长，时间表达仍可能把 attempt 起止当成扫描起止；本轮没有针对所有自由文本表述建立完备保证。
+
+八、回归与工程检查记录
+
+本机工件目录：/Users/yili/Documents/ChatGPT/autodock/results/interpro-fullscan-20261108/
+  all-regressions.log：126 项后端测试通过。
+  final-targeted.log：11 项完整扫描专项测试通过。
+  recovery-targeted.log：恢复相关 65 项测试通过。
+  final-contract-regression.log：最终合同/接口相关 51 项测试通过。
+这些是不同阶段的回归执行，数量有重叠，不是相加后的唯一测试数量。
+前端 10 项测试、TypeScript 检查和 Vite build 已通过；仍有既有 Molstar 大包警告。
+
+实际 HTTP 检查通过：
+  未鉴权返回 401；非对象请求、未知字段返回 400；取消早于提交时持久化取消记录；该 job 的迟到提交被拒绝。
+这些实测与单元测试证据分开保存，没有以 mock 冒充实际科学计算。
+
+九、安装与排障经过
+
+数据库传输受 Tailscale 中继速度影响，随后完成所有数据库整包 MD5 验证。
+机械硬盘解压明显缓慢；CATH 展开约 20.16 GB，PANTHER 约 4.87 GB/7.8 万文件，SUPERFAMILY 约 2.79 GB。
+release.json 在全部安装成功后才写出，避免残缺数据库被当作 ready。
+
+后端 Docker 构建曾因 BuildKit parent snapshot 缺失失败，改为 --no-cache 后构建成功；当前 stage_backend.py 已包含此参数。
+
+Ubuntu 曾出现容器命令已执行完但 Docker 无法返回退出状态的问题：独立 echo 容器也超时，可见容器为 running 而进程已消失。
+当时中断了隔离验收，重启了该节点的 Docker 及默认 containerd，未重启独立 containerd-k8s 或 kubelet。
+之后独立容器正常退出，实际扫描正常完成。
+该节点原有 buildx_buildkit_lebb-hermes-upgrade0 容器已恢复运行。
+交接时 eyoson-interproscan、docker、containerd、containerd-k8s、kubelet 均 active；Docker 中无扫描容器，仅观察到原有 buildkit 容器。
+这是一次恢复性处理，容器运行时故障的根本原因尚未证明。
+
+日志：
+  setup.log：最终 SETUP COMPLETE 18 default analyses。
+  acceptance-live.log、acceptance-v2-live.log：被排障中断的早期尝试。
+  runtime-repair.log：运行环境恢复和 echo 探针结果。
+  acceptance-v3-live.log：最终 REAL FULL SCAN AND CANCELLATION/RESUME PASSED。
+  agent-live.log：早期中断尝试。
+  agent-v2-live.log：真实 4 项 Agent 验收。
+  final-agent-checks-v2.log：最新恢复与只读追问。
+早期失败/中断日志保留，不代表最终验收仍在运行。
+
+十、工件、脚本与尚未覆盖的范围
+
+本机 before/ 保存本轮改动前的后端文件和前端 agentExecution.ts。
+panel.faa、panel-provenance.json 保存公共输入、来源与参考注释；variant-lookup-before-scan.json 保存变体预计算查询结果。
+backend-files.json、frontend-files.json 保存暂存内容指纹。
+agent-scan-evidence.tar.gz 已存在；交接时 agent-scan/ 目录为空，不能将该空目录当成已解包的扫描证据。
+
+现有脚本职责：
+  prepare_linux.py、finish_setup.py、pull_images.py：节点安装与数据库就绪。
+  stage_worker.py：Worker 代码、私有配置、systemd 安装。
+  run_acceptance_linux.py：真实扫描、取消、恢复及资源采样。
+  check_http_contract.py：真实 HTTP 接口检查。
+  live_agent_eval.py、final_agent_checks.py：隔离 Agent 验收和恢复验证。
+  stage_backend.py、stage_frontend.py：暂存构建与上传。
+  publish_backend.py：带真实验收、版本指纹、空闲检查、数据库备份和回滚的生产发布逻辑；尚未执行。
+  publish_frontend.py：只发布 marine-agent 子路径，验证首页文件与 current 链接未变；尚未执行。
+
+当前未完成或未验证的范围：
+  新版后端和前端生产发布、发布后联调。
+  新版内置浏览器完整操作、实时进度、结果、刷新历史的验收。
+  独立汇总的正式科学与性能报告。
+  大规模蛋白组/万级序列吞吐、长期运行稳定性、多用户压力测试。
+  流式产物传输：当前输入约 32 MiB 上限，远端响应约 256 MiB 上限，尚非大规模流式接口。
+  湿实验活性、底物特异性、催化残基、酶工程收益的独立验证。
+本轮证据支持新序列扫描及其工程调用可用，不支持“企业级自主科研已经完整达标”的结论。
+
+私有配置仅记录位置，不包含密钥内容：
+  本机工件目录 worker.private.env（权限 0600）。
+  Ubuntu 根目录 worker.private.env。
+  node1 暂存目录 worker.private.env、生产 /etc/marine-agent.env。
+本机 transfer-local.private.json、transfer-relay.private.json 在交接核对时已不存在；先前临时传输 HTTP 服务已停止。
+
+用户要求暂停后，本次只读取了状态和证据并写此文档，没有继续开发、启动新计算或发布服务。

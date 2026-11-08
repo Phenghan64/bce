@@ -1,0 +1,63 @@
+ABL1 real-case retrospective validation
+
+Project root: /Users/yili/Documents/ChatGPT/autodock
+Results: results/abl-real-case/
+
+This is a 16-compound extreme-group validation against Davis 2011 human
+nonphosphorylated ABL1 measurements, with a separate imatinib redocking gate.
+It is not a prospective drug discovery result or a full OpenFold3 rerun.
+
+Read results/abl-real-case/report.txt and analysis.json for measured results.
+Read protocol.json for rules fixed before docking, including the ligand-state
+amendment. The discarded broad-state preparation remains in preparation-v1/.
+No compounds were substituted after observing docking scores.
+
+Verify the source data and independently reconstruct the selected panel:
+  ./run.sh python realcase/verify_selection.py
+
+Check/resume existing docking jobs with input and output hash validation:
+  ./run.sh python realcase/run.py --output-dir results/abl-real-case --stage calibrate
+  ./run.sh python realcase/run.py --output-dir results/abl-real-case --stage panel
+Existing failed jobs are retained unless --retry-failed is explicitly supplied.
+Completed stage timings are preserved on a complete cache hit.
+
+Recompute the report from existing retained results:
+  ./run.sh python realcase/audit_outputs.py
+  ./run.sh python realcase/analyze.py
+  ./run.sh python realcase/plot.py
+
+Original preparation sequence (do not overwrite audited inputs casually):
+  ./openfold3/run.sh python realcase/export_receptor.py
+  .tools/prep-env/bin/python realcase/repair_receptor.py
+  ./run.sh python realcase/prepare_receptor.py
+  ./run.sh python realcase/prepare_ligands.py
+  ./openfold3/run.sh python realcase/monitor.py calibrate
+  ./openfold3/run.sh python realcase/monitor.py panel
+
+The OpenFold3 environment above supplies Biotite or psutil only; these commands
+do not execute OpenFold3 predictions. Ligand preparation additionally imports
+Dimorphite-DL2.1.0 and loguru0.7.3 from isolated .tools/realcase-deps/.
+
+No receptor residue was silently deleted to suppress preparation errors.
+The missing internal ASP and side-chain atoms were modeled; observed heavy
+atoms were fixed during Amber14 relaxation. Modeled carboxylates were initialized
+with planar geometry. Meeko template matching subsequently succeeded without
+ignore-bond or delete-bad-residue overrides. No added heavy atom was within5A
+of the crystal ligand; details are in receptor/pocket-qc.json.
+
+The final ligand states are heuristic pH7.4 estimates, not measured pKa states.
+Some piperazine compounds were assigned +2 charge. Bound-state protonation and
+coupled-site pKa effects are unvalidated limitations. Experimental ligands were
+removed from receptor docking input; independently embedded ligand coordinates
+were used. The known crystal pose was used only to define the search region
+and evaluate the separate imatinib calibration.
+
+Original runner QC compares full canonical isomeric SMILES. RDKit can add N
+stereochemistry to protonated amines upon reading a 3D SDF, causing a false
+identity rejection when input nitrogen stereochemistry was unspecified.
+audit_outputs.py checks every stored pose and only normalizes newly inferred
+NH+ stereo at those previously unspecified sites. It still rejects changes in
+carbon stereochemistry, charge, connectivity, or specified input stereo.
+Raw job statuses and molecular coordinates are preserved; panel-validated.json
+records both original statuses and the audit findings. This validation change
+was made after observing an export discrepancy, not to alter ranking outcomes.
